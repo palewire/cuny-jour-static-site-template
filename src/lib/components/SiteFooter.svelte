@@ -7,13 +7,6 @@
   USAGE EXAMPLE:
   <SiteFooter />
 -->
-<script>
-  let {
-    tagline = 'A student-powered service at the Craig Newmark Graduate School of Journalism',
-    year = new Date().getFullYear(),
-  } = $props();
-</script>
-
 <footer class="site-footer">
   <div class="footer-container">
     <!-- CUNY Logo -->
@@ -63,10 +56,6 @@
 
   .footer-logo a:hover .cuny-logo {
     opacity: 0.7;
-  }
-
-  .footer-nav {
-    margin-bottom: var(--spacing-md);
   }
 
   .footer-link {
