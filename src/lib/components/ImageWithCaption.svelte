@@ -80,7 +80,6 @@
     flex-direction: column;
     gap: 0.25rem;
     padding-top: var(--spacing-xs);
-    border-top: 1px solid var(--color-border);
     margin-top: var(--spacing-xs);
   }
 
