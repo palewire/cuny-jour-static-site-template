@@ -9,9 +9,9 @@
    =========================================== */
 :root {
   /* NYCity News Service Colors */
-  --color-cuny-blue: #00356b;
-  --color-accent: #f47920;        /* Official CUNY orange */
-  --color-accent-hover: #d08b1a;
+  --color-cuny-blue: #0033A1;     /* CUNY Blue (PMS 286) */
+  --color-accent: #0033A1;        /* CUNY Blue as accent */
+  --color-accent-hover: #002880;
   --color-dark: #1a1a1a;
   --color-text: #333333;
   --color-white: #ffffff;

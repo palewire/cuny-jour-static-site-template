@@ -13,48 +13,55 @@
 -->
 <script>
   let {
-    tagline = 'A student-powered service at the Craig Newmark Graduate School of Journalism',
     navLinks = [],
   } = $props();
 </script>
 
 <header class="site-header">
-  <!-- Logo section with HTML/CSS -->
-  <div class="logo-section">
+  <!-- Compact masthead with logo left and nav right -->
+  <div class="masthead-wrapper">
+    <div class="masthead">
     <a href="/" class="logo" aria-label="NYCity News Service">
-      <!-- HTML/CSS Logo replicating the official header -->
+      <!-- Compact HTML/CSS Logo with thin white border -->
       <span class="logo-text">
-        <span class="logo-nycity">NYCITY</span><span class="logo-news">News</span><span class="logo-service">Service</span>
+        <span class="logo-nycity">NYCITY</span><span class="logo-news-service">News Service</span>
       </span>
     </a>
-    {#if tagline}
-      <p class="tagline">{tagline}</p>
-    {/if}
-  </div>
 
-  <!-- Navigation -->
-  {#if navLinks.length > 0}
-    <nav class="main-nav" aria-label="Main navigation">
-      <ul class="nav-list">
-        {#each navLinks as link}
-          <li>
-            <a href={link.href} class="nav-link">{link.label}</a>
-          </li>
-        {/each}
-      </ul>
-    </nav>
-  {/if}
+    <!-- Navigation inline with logo -->
+    {#if navLinks.length > 0}
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          {#each navLinks as link}
+            <li>
+              <a href={link.href} class="nav-link">{link.label}</a>
+            </li>
+          {/each}
+        </ul>
+      </nav>
+    {/if}
+    </div>
+  </div>
 </header>
 
 <style>
   .site-header {
-    border-bottom: 3px solid var(--color-accent, #f47920);
+    border-bottom: 0px solid var(--color-accent);
   }
 
-  /* Logo section */
-  .logo-section {
-    text-align: center;
-    padding: var(--spacing-md, 1.5rem) var(--spacing-md, 1.5rem);
+  /* Full-width blue background */
+  .masthead-wrapper {
+    background-color: var(--color-accent);
+  }
+
+  /* Compact Masthead - Flex layout with logo left, nav right */
+  .masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
   }
 
   .logo {
@@ -68,100 +75,87 @@
 
   .logo-text {
     display: inline-flex;
-    align-items: center;
-    font-size: 0;
-    line-height: 1;
+    align-items: stretch;
+    border: 1px solid var(--color-white);
   }
 
   .logo-nycity {
-    background-color: #00356b;
-    color: white;
-    font-family: var(--font-sans, 'Droid Sans', Arial, sans-serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 0.5rem 0.6rem;
-    letter-spacing: -0.02em;
-  }
-
-  .logo-news {
-    color: #1a1a1a;
-    font-family: var(--font-sans, 'Droid Sans', Arial, sans-serif);
-    font-size: 2rem;
-    font-weight: 400;
-    margin-left: 0.35rem;
-  }
-
-  .logo-service {
-    color: #1a1a1a;
-    font-family: var(--font-sans, 'Droid Sans', Arial, sans-serif);
-    font-size: 2rem;
-    font-weight: 400;
-  }
-
-  .tagline {
+    background-color: var(--color-white);
+    color: var(--color-accent);
     font-family: var(--font-sans);
-    font-size: 0.875rem;
-    color: var(--color-medium-gray, #666666);
-    margin-top: 0.5rem;
-    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 0.2rem 0.4rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
   }
 
-  /* Navigation */
+  .logo-news-service {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.2rem 0.4rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Navigation - inline in masthead */
   .main-nav {
-    border-top: 1px solid var(--color-border, #e0e0e0);
-    padding: var(--spacing-sm, 1rem) var(--spacing-md, 1.5rem);
+    display: flex;
+    align-items: center;
   }
 
   .nav-list {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     list-style: none;
-    gap: var(--spacing-md, 1.5rem);
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
-    max-width: var(--max-width-wide, 1200px);
-    margin: 0 auto;
   }
 
   .nav-link {
-    color: var(--color-dark, #1a1a1a);
+    color: white;
     text-decoration: none;
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    transition: color 0.2s ease;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
   }
 
   .nav-link:hover {
-    color: var(--color-accent, #f47920);
+    color: white;
+    opacity: 0.8;
     text-decoration: none;
   }
 
-  @media (max-width: 768px) {
+  /* Mobile: hide nav, center logo - switch at 1200px to prevent wrapping */
+  @media (max-width: 1200px) {
+    .masthead {
+      justify-content: center;
+      padding: 0.5rem 1rem;
+    }
+
+    .main-nav {
+      display: none;
+    }
+
     .logo-nycity {
-      font-size: 1.1rem;
-      padding: 0.35rem 0.45rem;
+      font-size: 0.875rem;
+      padding: 0.15rem 0.35rem;
     }
 
-    .logo-news,
-    .logo-service {
-      font-size: 1.5rem;
-    }
-
-    .tagline {
-      font-size: 0.75rem;
-      padding: 0 var(--spacing-sm);
-    }
-
-    .nav-list {
-      gap: var(--spacing-sm, 1rem);
-    }
-
-    .nav-link {
-      font-size: 0.6875rem;
+    .logo-news-service {
+      font-size: 0.875rem;
+      padding: 0.15rem 0.35rem;
     }
   }
 </style>

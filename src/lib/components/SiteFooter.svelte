@@ -9,12 +9,18 @@
 -->
 <script>
   let {
+    tagline = 'A student-powered service at the Craig Newmark Graduate School of Journalism',
     year = new Date().getFullYear(),
   } = $props();
 </script>
 
 <footer class="site-footer">
   <div class="footer-container">
+    <!-- Tagline -->
+    {#if tagline}
+      <p class="tagline">{tagline}</p>
+    {/if}
+    
     <!-- CUNY Logo -->
     <div class="footer-logo">
       <img 
@@ -35,19 +41,20 @@
 
 <style>
   .site-footer {
-    background-color: #f0f0f0;
-    padding: var(--spacing-xl, 3rem) var(--spacing-md, 1.5rem);
-    margin-top: var(--spacing-xxl, 4rem);
+    background-color: var(--color-white);
+    border-top: 4px solid var(--color-accent);
+    padding: var(--spacing-xl) var(--spacing-md);
+    margin-top: var(--spacing-xxl);
   }
 
   .footer-container {
-    max-width: var(--max-width, 800px);
+    max-width: var(--max-width);
     margin: 0 auto;
     text-align: center;
   }
 
   .footer-logo {
-    margin-bottom: var(--spacing-md, 1.5rem);
+    margin-bottom: var(--spacing-md);
   }
 
   .cuny-logo {
@@ -57,11 +64,11 @@
   }
 
   .footer-nav {
-    margin-bottom: var(--spacing-md, 1.5rem);
+    margin-bottom: var(--spacing-md);
   }
 
   .footer-link {
-    color: #333;
+    color: var(--color-dark);
     text-decoration: none;
     font-family: var(--font-sans);
     font-size: 0.875rem;
@@ -71,11 +78,19 @@
   }
 
   .footer-link:hover {
-    color: var(--color-cuny-blue, #00356b);
+    color: var(--color-accent);
   }
 
   .footer-divider {
-    color: #999;
-    margin: 0 var(--spacing-sm, 1rem);
+    color: var(--color-medium-gray);
+    margin: 0 var(--spacing-sm);
+  }
+
+  .tagline {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    color: var(--color-medium-gray);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.01em;
   }
 </style>

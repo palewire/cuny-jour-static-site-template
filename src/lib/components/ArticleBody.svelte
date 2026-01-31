@@ -25,12 +25,12 @@
     font-family: var(--font-sans);
     font-size: 1.125rem;
     line-height: 1.8;
-    color: var(--color-text, #333333);
+    color: var(--color-text);
   }
 
   /* Paragraph styling */
   .article-body :global(p) {
-    margin-bottom: var(--spacing-md, 1.5rem);
+    margin-bottom: var(--spacing-md);
   }
 
   .article-body :global(p:last-child) {
@@ -39,43 +39,43 @@
 
   /* Links within article body */
   .article-body :global(a) {
-    color: var(--color-dark, #1a1a1a);
+    color: var(--color-dark);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
   .article-body :global(a:hover) {
-    color: var(--color-accent, #e89e25);
+    color: var(--color-accent);
   }
 
   /* Subheadings within article */
   .article-body :global(h2) {
-    font-family: var(--font-serif, Georgia, serif);
+    font-family: var(--font-serif);
     font-size: 1.75rem;
     font-weight: 400;
-    margin-top: var(--spacing-xl, 3rem);
-    margin-bottom: var(--spacing-sm, 1rem);
-    color: var(--color-dark, #1a1a1a);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-dark);
   }
 
   .article-body :global(h3) {
-    font-family: var(--font-serif, Georgia, serif);
+    font-family: var(--font-serif);
     font-size: 1.375rem;
     font-weight: 400;
-    margin-top: var(--spacing-lg, 2rem);
-    margin-bottom: var(--spacing-sm, 1rem);
-    color: var(--color-dark, #1a1a1a);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-dark);
   }
 
-  /* Block quotes - NYCity style with orange left border */
+  /* Block quotes - NYCity style with blue left border */
   .article-body :global(blockquote) {
-    border-left: 4px solid var(--color-accent, #e89e25);
-    margin: var(--spacing-lg, 2rem) 0;
-    padding: var(--spacing-sm, 1rem) var(--spacing-md, 1.5rem);
+    border-left: 4px solid var(--color-accent);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-sm) var(--spacing-md);
     font-style: italic;
     font-size: 1.25rem;
     line-height: 1.6;
-    color: var(--color-dark, #1a1a1a);
+    color: var(--color-dark);
   }
 
   .article-body :global(blockquote p) {
@@ -85,12 +85,12 @@
   /* Lists */
   .article-body :global(ul),
   .article-body :global(ol) {
-    margin-bottom: var(--spacing-md, 1.5rem);
-    padding-left: var(--spacing-md, 1.5rem);
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md);
   }
 
   .article-body :global(li) {
-    margin-bottom: var(--spacing-xs, 0.5rem);
+    margin-bottom: var(--spacing-xs);
   }
 
   /* Strong/Bold text */
@@ -106,7 +106,7 @@
 
     .article-body :global(blockquote) {
       font-size: 1.125rem;
-      padding-left: var(--spacing-sm, 1rem);
+      padding-left: var(--spacing-sm);
     }
   }
 </style>

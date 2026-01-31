@@ -25,4 +25,20 @@ npm run dev
 
 ## Deploy to GitHub Pages
 
-See the comments in `.github/workflows/deploy.yml` for instructions.
+Your site will automatically deploy to GitHub Pages when you create a Release.
+
+### Setup (One Time)
+
+1. Go to your repository **Settings** > **Pages**
+2. Under "Source", select **GitHub Actions**
+
+### Deploy Your Site
+
+1. Go to your repository's **Releases** page (in the right sidebar or under "Code")
+2. Click **"Create a new release"** (or "Draft a new release")
+3. Choose a tag (e.g., `v1.0.0`), add a title/description
+4. Click **"Publish release"**
+
+The workflow will build and deploy your site to `https://<your-github-username>.github.io/<your-repository-name>/`
+
+You can also manually trigger a deploy from the Actions tab using "workflow_dispatch".

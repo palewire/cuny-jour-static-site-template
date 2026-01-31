@@ -45,7 +45,7 @@
 
 <style>
   .image-figure {
-    margin: var(--spacing-lg, 2rem) 0;
+    margin: var(--spacing-lg) 0;
     padding: 0;
   }
 
@@ -79,26 +79,26 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    padding-top: var(--spacing-xs, 0.5rem);
-    border-top: 1px solid var(--color-border, #e0e0e0);
-    margin-top: var(--spacing-xs, 0.5rem);
+    padding-top: var(--spacing-xs);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--spacing-xs);
   }
 
   .caption {
     font-size: 0.875rem;
     line-height: 1.4;
-    color: var(--color-dark-gray, #333333);
+    color: var(--color-text);
   }
 
   .credit {
     font-size: 0.75rem;
-    color: var(--color-medium-gray, #666666);
+    color: var(--color-medium-gray);
     font-style: italic;
   }
 
   @media (max-width: 768px) {
     .image-figure {
-      margin: var(--spacing-md, 1.5rem) 0;
+      margin: var(--spacing-md) 0;
     }
 
     .caption {

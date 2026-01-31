@@ -2,7 +2,7 @@
   RelatedLinks.svelte — NYCity News Service Style Related Stories
 
   Displays a "Related Stories" or "Recent News" section at the bottom 
-  of articles with orange accent heading style.
+  of articles with blue accent heading style.
 
   USAGE EXAMPLE:
   <RelatedLinks
@@ -39,27 +39,27 @@
 
 <style>
   .related-links {
-    margin-top: var(--spacing-xl, 3rem);
+    margin-top: var(--spacing-xl);
   }
 
   .related-title {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm, 1rem);
+    gap: var(--spacing-sm);
     font-family: var(--font-sans);
     font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--color-dark, #1a1a1a);
-    margin-bottom: var(--spacing-md, 1.5rem);
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
   }
 
   .related-title::after {
     content: '';
     flex: 1;
     height: 2px;
-    background-color: var(--color-accent, #e89e25);
+    background-color: var(--color-accent);
   }
 
   .link-list {
@@ -69,9 +69,9 @@
   }
 
   .link-item {
-    margin-bottom: var(--spacing-md, 1.5rem);
-    padding-bottom: var(--spacing-md, 1.5rem);
-    border-bottom: 1px solid var(--color-border, #e0e0e0);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .link-item:last-child {
@@ -81,10 +81,10 @@
   }
 
   .link {
-    font-family: var(--font-serif, Georgia, serif);
+    font-family: var(--font-serif);
     font-size: 1.25rem;
     font-weight: 400;
-    color: var(--color-dark, #1a1a1a);
+    color: var(--color-dark);
     text-decoration: none;
     line-height: 1.3;
     display: block;
@@ -92,7 +92,7 @@
   }
 
   .link:hover {
-    color: var(--color-accent, #e89e25);
+    color: var(--color-accent);
     text-decoration: none;
   }
 
