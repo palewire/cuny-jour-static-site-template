@@ -17,16 +17,9 @@ npm run dev
 
 ### Deployment
 
-Your site will automatically deploy to GitHub Pages, once you...
+Your site will automatically deploy to GitHub Pages when you push to the `main` branch. To enable this:
 
 1. Go to your repository **Settings** > **Pages**
 2. Under "Source", select **GitHub Actions**
 
-Then, all you need to do is create a new release by...
-
-1. Go to your repository's **Releases** page (in the right sidebar or under "Code")
-2. Click **"Create a new release"** (or "Draft a new release")
-3. Choose a tag (e.g., `v1.0.0`), add a title/description
-4. Click **"Publish release"**
-
-The workflow will build and deploy your site to `https://<your-github-username>.github.io/<your-repository-name>/`
+That's it! Every push to `main` will automatically build and deploy your site to `https://<your-github-username>.github.io/<your-repository-name>/`
