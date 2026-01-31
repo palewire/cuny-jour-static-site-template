@@ -29,6 +29,7 @@ const config = {
     // It's needed because GitHub Pages serves from a subdirectory
     paths: {
       base: process.env.BASE_PATH || '',
+      assets: process.env.BASE_PATH || '',
     },
   },
 };
