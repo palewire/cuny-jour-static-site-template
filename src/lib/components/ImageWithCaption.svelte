@@ -14,6 +14,8 @@
   />
 -->
 <script>
+  import { base } from '$app/paths';
+  
   let {
     src,                    // Required: Image source URL
     alt,                    // Required: Alt text for accessibility
@@ -21,11 +23,19 @@
     credit = '',            // Optional: Photo credit
     size = 'full',          // 'full', 'large', 'medium', 'small'
   } = $props();
+
+  // Prepend base path to local images (those starting with /)
+  // but not to external URLs (http://, https://, //, data:)
+  const resolvedSrc = $derived(
+    src.startsWith('/') && !src.startsWith('//') 
+      ? `${base}${src}` 
+      : src
+  );
 </script>
 
 <figure class="image-figure" class:size-full={size === 'full'} class:size-large={size === 'large'} class:size-medium={size === 'medium'} class:size-small={size === 'small'}>
   <img 
-    {src} 
+    src={resolvedSrc} 
     {alt} 
     class="image"
     loading="lazy"

@@ -7,13 +7,17 @@
   USAGE EXAMPLE:
   <SiteFooter />
 -->
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <footer class="site-footer">
   <div class="footer-container">
     <!-- CUNY Logo -->
     <div class="footer-logo">
       <a href="https://www.journalism.cuny.edu/">
         <img 
-          src="/cuny-footer-logo.svg" 
+          src="{base}/cuny-footer-logo.svg" 
           alt="Craig Newmark Graduate School of Journalism at CUNY"
           class="cuny-logo"
         />
