@@ -21,7 +21,7 @@
   <!-- Compact masthead with logo left and nav right -->
   <div class="masthead-wrapper">
     <div class="masthead">
-    <a href="/" class="logo" aria-label="NYCity News Service">
+    <a href="https://www.nycitynewsservice.com/" class="logo" aria-label="NYCity News Service">
       <!-- Compact HTML/CSS Logo with thin white border -->
       <span class="logo-text">
         <span class="logo-nycity">NYCITY</span><span class="logo-news-service">News Service</span>
@@ -47,6 +47,7 @@
 <style>
   .site-header {
     border-bottom: 0px solid var(--color-accent);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   /* Full-width blue background */
@@ -59,7 +60,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     max-width: var(--max-width-wide);
     margin: 0 auto;
   }

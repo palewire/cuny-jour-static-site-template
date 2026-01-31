@@ -16,18 +16,15 @@
 
 <footer class="site-footer">
   <div class="footer-container">
-    <!-- Tagline -->
-    {#if tagline}
-      <p class="tagline">{tagline}</p>
-    {/if}
-    
     <!-- CUNY Logo -->
     <div class="footer-logo">
-      <img 
-        src="/cuny-footer-logo.png" 
-        alt="Craig Newmark Graduate School of Journalism at CUNY"
-        class="cuny-logo"
-      />
+      <a href="https://www.journalism.cuny.edu/">
+        <img 
+          src="/cuny-footer-logo.svg" 
+          alt="Craig Newmark Graduate School of Journalism at CUNY"
+          class="cuny-logo"
+        />
+      </a>
     </div>
     
     <!-- Footer Navigation -->
@@ -41,8 +38,8 @@
 
 <style>
   .site-footer {
-    background-color: var(--color-white);
-    border-top: 4px solid var(--color-accent);
+    background-color: var(--color-light-gray);
+    border-top: 1px solid var(--color-medium-gray);
     padding: var(--spacing-xl) var(--spacing-md);
     margin-top: var(--spacing-xxl);
   }
@@ -58,9 +55,14 @@
   }
 
   .cuny-logo {
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
     margin: 0 auto;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-logo a:hover .cuny-logo {
+    opacity: 0.7;
   }
 
   .footer-nav {
@@ -84,13 +86,5 @@
   .footer-divider {
     color: var(--color-medium-gray);
     margin: 0 var(--spacing-sm);
-  }
-
-  .tagline {
-    font-family: var(--font-sans);
-    font-size: 0.9375rem;
-    color: var(--color-medium-gray);
-    margin-bottom: var(--spacing-md);
-    letter-spacing: 0.01em;
   }
 </style>

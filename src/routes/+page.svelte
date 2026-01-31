@@ -1,5 +1,5 @@
 <!--
-  This is your PAGE!
+  This is you page!
 -->
 <script>
   // Import all the news furniture components
@@ -9,22 +9,21 @@
   import RelatedLinks from '$lib/components/RelatedLinks.svelte';
 
   // Article metadata
-  let headline = 'City Council Approves $2.5 Billion Budget for Parks Expansion';
-  let byline = 'Jane Smith';
-  let pubDate = '2024-01-15';
+  let headline = 'Become a force for good. Join our next class.';
+  let byline = 'NYCity News Service';
+  let pubDate = '2026-01-31';
 
   // Related stories
   const relatedStories = [
-    { headline: 'Mayor Announces New Transit Plan for Downtown Area', href: '#' },
-    { headline: 'Budget Talks Continue as Deadline Approaches', href: '#' },
-    { headline: 'Local Schools See Record Enrollment This Fall', href: '#' },
+    { headline: 'How America\'s top news organizations escape rigid publishing systems to design beautiful data-driven stories on deadline.', href: 'https://palewi.re/docs/coding-the-news/' },
+    { headline: 'How to install, configure and use Visual Studio Code, GitHub and Copilot', href: 'https://palewi.re/docs/coding-the-news/scripts/week-1/' },
   ];
 </script>
 
 <!-- This sets the page title in the browser tab -->
 <svelte:head>
   <title>{headline} | NYCity News Service</title>
-  <meta name="description" content="The City Council voted 8-3 Tuesday night to approve a $2.5 billion parks expansion plan." />
+  <meta name="description" content="At the Craig Newmark Graduate School of Journalism at the City University of New York, change is in our DNA. That comes of being born in 2006, as the digital revolution was transforming our profession in ways none of us could have imagined." />
 </svelte:head>
 
 <!-- Your page content goes here -->
@@ -37,44 +36,50 @@
     {pubDate}
   />
 
-  <!-- Lead Image: Main photo for the story -->
+  <!-- Lead Image: CUNY Journalism School building -->
   <ImageWithCaption
-    src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=800&q=80"
-    alt="Aerial view of a city park with walking paths and green spaces"
-    caption="The new budget includes funding for three new parks across the city, including expanded green spaces in underserved neighborhoods."
-    credit="Photo by Unsplash"
+    src="/example-photo.gif"
+    alt="The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan."
+    caption="The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan."
+    credit="Craig Newmark Graduate School of Journalism"
   />
 
   <!-- Article Body: The main story text with proper typography -->
-  <ArticleBody dropCap={true}>
+  <ArticleBody>
     <p>
-      The City Council voted 8-3 Tuesday night to approve a landmark $2.5 billion parks expansion plan, the largest investment in public green spaces in the city's history. The measure, which had been debated for nearly six months, will fund the creation of three new parks and the renovation of 15 existing ones over the next decade.
+      At the Craig Newmark Graduate School of Journalism at the City University of New York, change is in our DNA. That comes of being born in 2006, as the digital revolution was transforming our profession in ways none of us could have imagined.
     </p>
 
     <p>
-      "This is a transformative moment for our city," said Mayor Eleanor Vance after the vote. "Every resident, regardless of their neighborhood, deserves access to quality green spaces. This budget makes that a reality."
+      We fashioned a school to teach the latest storytelling, entrepreneurial, and technological skills alongside reporting, writing, and ethics. Beyond that, we’ve crafted a culture that spurns complacency, that isn’t afraid to pivot before the ground under us shifts.
     </p>
 
     <p>
-      The plan allocates $1.2 billion for new park construction, with the remaining funds dedicated to infrastructure improvements, maintenance facilities, and community programming. Critics of the measure, including Council Member Robert Chen, argued that the spending was excessive given other pressing city needs.
-    </p>
-
-    <blockquote>
-      <p>"While I support parks in principle, we have roads crumbling and schools that need repair. This is a question of priorities."</p>
-    </blockquote>
-
-    <p>
-      The three new parks will be located in the Eastside, Northgate, and Riverside districtsareas that currently have the least green space per capita. Environmental advocates praised the decision as a crucial step toward climate resilience and public health.
-    </p>
-
-    <h2>What's Next</h2>
-
-    <p>
-      Construction on the first new park is expected to begin in spring 2025, with completion targeted for late 2027. The Parks Department will hold community input sessions next month to gather feedback on design priorities.
+      Our mission is to serve the public interest – by training new journalists from varied economic, racial, and cultural backgrounds who will bring much-needed diversity to newsrooms, by helping mid-career journalists retool their skills, and by partnering with other media organizations to find new paths to excellence.
     </p>
 
     <p>
-      Residents can submit comments through the city's online portal through February 28. The full budget breakdown is available on the city's website.
+      Our low tuition rates, along with the added backing of private donors, allow candidates for our master’s degrees in journalism and engagement journalism to receive a world-class education at an affordable price. We also offer a unique bilingual master’s in journalism for students fluent in English and Spanish.
+    </p>
+
+    <p>
+      Our three media centers provide research, training, thought leadership, industry meet-ups, and financial support for quality journalistic work.
+    </p>
+
+    <p>
+      We also offer a robust professional education program through regular evening and weekend workshops. And we support in-depth reporting projects of professional journalists through fellowship grants.
+    </p>
+
+    <p>
+      Classes are led by accomplished full-time faculty and adjuncts, who tap their networks to help students and graduates find internships, freelance opportunities and — the ultimate prize — jobs.
+    </p>
+
+    <p>
+      At a time when our profession is reeling from financial pressures and lack of trust, the Newmark Graduate School of Journalism is committed to producing the next generation of skilled, ethically minded, and diverse journalists.
+    </p>
+
+    <p>
+      We invite you to be part of our world.
     </p>
   </ArticleBody>
 
@@ -89,6 +94,6 @@
 <style>
   /* Styles here only apply to this page */
   .container {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
   }
 </style>
