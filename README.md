@@ -1,6 +1,4 @@
-# Static Site Template
-
-A simple SvelteKit template for building static websites. Created for ["JOUR 73361: Coding the News,"](https://github.com/palewire/cuny-jour-73361-coding-the-news) a course taught at the City University of New York's Craig Newmark Graduate School of Journalism course.
+A simple SvelteKit starter template for ["JOUR 73361: Coding the News,"](https://github.com/palewire/cuny-jour-73361-coding-the-news) a course taught at the City University of New York's Craig Newmark Graduate School of Journalism 
 
 ## Quick Start
 
@@ -15,24 +13,16 @@ npm run dev
 ```
 
 5. Open http://localhost:5173 in your browser
+6. Edit `src/routes/+page.svelte` to customize your page
 
-## Project Structure
+### Deployment
 
-- `src/routes/+page.svelte` — Your page (edit this!)
-- `src/routes/+layout.svelte` — Layout that wraps all pages
-- `src/app.css` — Global styles
-- `static/` — Static files (images, etc.)
-
-## Deploy to GitHub Pages
-
-Your site will automatically deploy to GitHub Pages when you create a Release.
-
-### Setup (One Time)
+Your site will automatically deploy to GitHub Pages, once you...
 
 1. Go to your repository **Settings** > **Pages**
 2. Under "Source", select **GitHub Actions**
 
-### Deploy Your Site
+Then, all you need to do is create a new release by...
 
 1. Go to your repository's **Releases** page (in the right sidebar or under "Code")
 2. Click **"Create a new release"** (or "Draft a new release")
@@ -40,5 +30,3 @@ Your site will automatically deploy to GitHub Pages when you create a Release.
 4. Click **"Publish release"**
 
 The workflow will build and deploy your site to `https://<your-github-username>.github.io/<your-repository-name>/`
-
-You can also manually trigger a deploy from the Actions tab using "workflow_dispatch".
