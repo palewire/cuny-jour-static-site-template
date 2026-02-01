@@ -36,7 +36,6 @@
 <style>
   .site-footer {
     background-color: var(--color-light-gray);
-    border-top: 1px solid var(--color-medium-gray);
     padding: var(--spacing-xl) var(--spacing-md);
     margin-top: var(--spacing-xxl);
   }
