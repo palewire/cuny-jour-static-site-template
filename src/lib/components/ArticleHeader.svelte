@@ -37,16 +37,6 @@
 
   {#if byline || pubDate}
     <div class="meta">
-      {#if pubDate}
-        <span class="meta-item date">
-          <svg class="meta-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <time datetime={pubDate}>{formatDate(pubDate)}</time>
-        </span>
-      {/if}
-
       {#if byline}
         <span class="meta-item byline">
           <svg class="meta-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
@@ -54,6 +44,16 @@
             <circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
           </svg>
           {byline}
+        </span>
+      {/if}
+
+      {#if pubDate}
+        <span class="meta-item date">
+          <svg class="meta-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <time datetime={pubDate}>{formatDate(pubDate)}</time>
         </span>
       {/if}
     </div>

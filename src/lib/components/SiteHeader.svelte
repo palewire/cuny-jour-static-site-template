@@ -1,15 +1,5 @@
 <!--
   SiteHeader.svelte — NYCity News Service Style Header
-
-  Header with HTML/CSS logo and navigation matching the real site.
-
-  USAGE EXAMPLE:
-  <SiteHeader
-    navLinks={[
-      { label: 'Arts & Culture', href: '#' },
-      { label: 'Business', href: '#' }
-    ]}
-  />
 -->
 <script>
   let {
@@ -50,9 +40,28 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  /* Full-width blue background */
+  /* Full-width blue background with animated dark-to-light gradient */
   .masthead-wrapper {
-    background-color: var(--color-accent);
+    background: linear-gradient(
+      90deg,
+      #002266 0%,
+      #0033A1 50%,
+      #0066CC 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-sweep 6s ease-in-out infinite;
+  }
+
+  @keyframes gradient-sweep {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
   }
 
   /* Compact Masthead - Flex layout with logo left, nav right */
@@ -94,7 +103,6 @@
   }
 
   .logo-news-service {
-    background-color: var(--color-accent);
     color: var(--color-white);
     font-family: var(--font-sans);
     font-size: 1rem;
