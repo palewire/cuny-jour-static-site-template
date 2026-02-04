@@ -3,7 +3,7 @@
 
   Displays the headline and metadata line with icons in the NYCity style:
   - Large serif headline
-  - Orange bordered metadata box with date, authors, and optional source
+  - Bordered metadata box with date, authors, and optional source
 
   USAGE EXAMPLE:
   <ArticleHeader
@@ -23,7 +23,11 @@
   function formatDate(dateString) {
     if (!dateString) return '';
     
-    const date = new Date(dateString);
+    // Parse YYYY-MM-DD format manually to avoid UTC timezone issues
+    // This ensures "2024-01-15" displays as January 15 regardless of user's timezone
+    const [year, month, day] = dateString.split('-').map(Number);
+    const date = new Date(year, month - 1, day);  // month is 0-indexed
+    
     return new Intl.DateTimeFormat('en-US', {
       year: 'numeric',
       month: 'long',

@@ -1,5 +1,5 @@
 <!--
-  This is you page!
+  This is your page!
 -->
 <script>
   // Import all the news furniture components
