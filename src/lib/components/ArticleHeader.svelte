@@ -64,14 +64,17 @@
   {/if}
 </header>
 
-<style>
+<style lang="scss">
+  @use '../styles' as *;
+
   .article-header {
     margin-bottom: var(--spacing-md);
   }
 
+  /* Mobile-first: smaller headline, stacked meta */
   .headline {
     font-family: var(--font-serif);
-    font-size: 2.75rem;
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: var(--spacing-sm);
@@ -80,9 +83,9 @@
 
   .meta {
     display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--spacing-sm);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
     padding: var(--font-size-xs) var(--spacing-sm);
     border-left: var(--border-width-accent) solid var(--color-accent);
     background-color: var(--color-light-gray);
@@ -108,19 +111,17 @@
     color: var(--color-dark);
   }
 
-  @media (max-width: 768px) {
+  /* Tablet and up: larger headline, inline meta */
+  @include tablet {
     .headline {
-      font-size: 2rem;
+      font-size: 2.75rem;
     }
 
     .meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: var(--spacing-xs);
-    }
-
-    .meta-item {
-      font-size: var(--font-size-sm);
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--spacing-sm);
     }
   }
 </style>

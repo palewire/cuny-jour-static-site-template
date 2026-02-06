@@ -16,15 +16,15 @@
   }
 }
 
-// Tablet and down
-// Usage: @include tablet-down { ... }
-@mixin tablet-down {
-  @media (max-width: $breakpoint-lg) {
+// Tablet and up (768px+)
+// Usage: @include tablet { ... }
+@mixin tablet {
+  @media (min-width: $breakpoint-sm) {
     @content;
   }
 }
 
-// Desktop and up
+// Desktop and up (1200px+)
 // Usage: @include desktop { ... }
 @mixin desktop {
   @media (min-width: $breakpoint-lg) {
