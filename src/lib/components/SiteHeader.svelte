@@ -34,7 +34,9 @@
   </div>
 </header>
 
-<style>
+<style lang="scss">
+  @use '../styles' as *;
+
   .site-header {
     border-bottom: 0px solid var(--color-accent);
     box-shadow: 0 2px 4px var(--color-shadow);
@@ -64,12 +66,12 @@
     }
   }
 
-  /* Compact Masthead - Flex layout with logo left, nav right */
+  /* Compact Masthead - Mobile: centered */
   .masthead {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: var(--font-size-xs) var(--spacing-md);
+    justify-content: center;
+    padding: var(--spacing-xs) var(--spacing-sm);
     max-width: var(--max-width-wide);
     margin: 0 auto;
   }
@@ -93,9 +95,9 @@
     background-color: var(--color-white);
     color: var(--color-accent);
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
     font-weight: 800;
-    padding: 0.2rem 0.4rem;
+    padding: 0.15rem 0.35rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     display: flex;
@@ -105,18 +107,17 @@
   .logo-news-service {
     color: var(--color-white);
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
     font-weight: 300;
-    padding: 0.2rem 0.4rem;
+    padding: 0.15rem 0.35rem;
     letter-spacing: -0.01em;
     display: flex;
     align-items: center;
   }
 
-  /* Navigation - inline in masthead */
+  /* Navigation - hidden on mobile */
   .main-nav {
-    display: flex;
-    align-items: center;
+    display: none;
   }
 
   .nav-list {
@@ -146,25 +147,27 @@
     text-decoration: none;
   }
 
-  /* Mobile: hide nav, center logo - switch at 1200px to prevent wrapping */
-  @media (max-width: 1200px) {
+  /* Desktop styles - show nav, space-between layout, larger logo */
+  @include desktop {
     .masthead {
-      justify-content: center;
-      padding: var(--spacing-xs) var(--spacing-sm);
-    }
-
-    .main-nav {
-      display: none;
+      justify-content: space-between;
+      padding: var(--font-size-xs) var(--spacing-md);
     }
 
     .logo-nycity {
-      font-size: var(--font-size-sm);
-      padding: 0.15rem 0.35rem;
+      font-size: 1rem;
+      padding: 0.2rem 0.4rem;
     }
 
     .logo-news-service {
-      font-size: var(--font-size-sm);
-      padding: 0.15rem 0.35rem;
+      font-size: 1rem;
+      padding: 0.2rem 0.4rem;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
     }
   }
+
 </style>

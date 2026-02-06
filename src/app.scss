@@ -1,6 +1,9 @@
 /* Global styles for NYCity News Service style site */
 /* These apply to every page */
 
+/* ---------- SCSS Imports ---------- */
+@use '$lib/styles' as *;
+
 /* ---------- Google Fonts ---------- */
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Droid+Sans:wght@400;700&display=swap');
 
@@ -139,7 +142,7 @@ img {
 /* ===========================================
    Responsive Typography
    =========================================== */
-@media (max-width: 768px) {
+@include mobile {
   html {
     font-size: 15px;
   }

@@ -1,0 +1,18 @@
+// ===========================================
+// SCSS Variables
+// ===========================================
+// These are Sass variables for values that cannot be CSS custom properties.
+// CSS custom properties don't work in media query conditions, so we use
+// Sass variables for breakpoints.
+
+// Breakpoints
+// Use these with the mixins in _mixins.scss
+$breakpoint-sm: 768px;   // Mobile/tablet breakpoint
+$breakpoint-lg: 1200px;  // Desktop breakpoint
+
+// Z-Index Scale
+// Centralized z-index values prevent stacking context conflicts
+$z-header: 100;
+$z-dropdown: 200;
+$z-modal: 300;
+$z-tooltip: 400;

@@ -1,5 +1,5 @@
 /**
- * svelte.config.js  SvelteKit Configuration
+ * svelte.config.js  SvelteKit Configuration
  *
  * This file tells SvelteKit how to build your site.
  * The most important setting here is the "adapter" which determines
@@ -11,9 +11,12 @@
  * Learn more: https://svelte.dev/docs/kit/configuration
  */
 import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+  // Enable SCSS preprocessing in <style lang="scss"> blocks
+  preprocess: vitePreprocess(),
   kit: {
     // The static adapter builds your site as plain HTML/CSS/JS files
     // These can be hosted anywhere (GitHub Pages, Netlify, etc.)

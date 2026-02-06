@@ -1,0 +1,11 @@
+// ===========================================
+// SCSS Index (Barrel File)
+// ===========================================
+// This file forwards all partials so they can be imported with a single line:
+//   @use '$lib/styles' as *;
+//
+// The @forward directive makes the contents of these files available
+// to any file that @use's this index.
+
+@forward 'variables';
+@forward 'mixins';

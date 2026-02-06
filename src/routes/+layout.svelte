@@ -5,7 +5,7 @@
 -->
 <script>
   // Import global styles
-  import '../app.css';
+  import '../app.scss';
   
   // Import site-wide components
   import SiteHeader from '$lib/components/SiteHeader.svelte';

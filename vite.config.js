@@ -1,5 +1,5 @@
 /**
- * vite.config.js  Vite Configuration
+ * vite.config.js  Vite Configuration
  *
  * Vite is the build tool that powers SvelteKit. It handles:
  * - Running the development server (`npm run dev`)

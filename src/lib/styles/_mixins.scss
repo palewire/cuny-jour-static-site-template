@@ -1,0 +1,33 @@
+// ===========================================
+// SCSS Mixins
+// ===========================================
+// Mixins are reusable blocks of CSS. Use @include to apply them.
+
+@use 'variables' as *;
+
+// Responsive Breakpoint Mixins
+// These wrap media queries so you don't have to remember breakpoint values.
+
+// Mobile-first: styles for small screens and up
+// Usage: @include mobile { ... }
+@mixin mobile {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+// Tablet and down
+// Usage: @include tablet-down { ... }
+@mixin tablet-down {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+// Desktop and up
+// Usage: @include desktop { ... }
+@mixin desktop {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
