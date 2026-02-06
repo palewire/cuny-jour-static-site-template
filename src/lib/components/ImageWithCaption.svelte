@@ -53,13 +53,19 @@
   {/if}
 </figure>
 
-<style>
+<style lang="scss">
+  @use '../styles' as *;
+
   .image-figure {
-    margin: var(--spacing-lg) 0;
+    margin: var(--spacing-md) 0; // Mobile-first: smaller margin
     padding: 0;
+
+    @include tablet {
+      margin: var(--spacing-lg) 0; // Larger screens: bigger margin
+    }
   }
 
-  /* Size variants */
+  // Size variants
   .size-full {
     width: 100%;
   }
@@ -103,19 +109,5 @@
     font-size: var(--font-size-xs);
     color: var(--color-medium-gray);
     font-style: italic;
-  }
-
-  @media (max-width: 768px) {
-    .image-figure {
-      margin: var(--spacing-md) 0;
-    }
-
-    .caption {
-      font-size: var(--font-size-sm);
-    }
-
-    .credit {
-      font-size: var(--font-size-xs);
-    }
   }
 </style>

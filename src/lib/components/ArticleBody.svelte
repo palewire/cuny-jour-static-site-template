@@ -20,11 +20,14 @@
   {@render children()}
 </article>
 
-<style>
+<style lang="scss">
+  @use '../styles' as *;
+
+  /* Mobile-first: smaller text */
   .article-body {
     font-family: var(--font-sans);
-    font-size: var(--font-size-lg);
-    line-height: 1.8;
+    font-size: var(--font-size-base);
+    line-height: 1.75;
     color: var(--color-text);
   }
 
@@ -71,9 +74,9 @@
   .article-body :global(blockquote) {
     border-left: var(--border-width-accent) solid var(--color-accent);
     margin: var(--spacing-lg) 0;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-sm);
     font-style: italic;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     line-height: 1.6;
     color: var(--color-dark);
   }
@@ -98,15 +101,16 @@
     font-weight: 600;
   }
 
-  @media (max-width: 768px) {
+  /* Tablet and up: larger text */
+  @include tablet {
     .article-body {
-      font-size: var(--font-size-base);
-      line-height: 1.75;
+      font-size: var(--font-size-lg);
+      line-height: 1.8;
     }
 
     .article-body :global(blockquote) {
-      font-size: var(--font-size-lg);
-      padding-left: var(--spacing-sm);
+      font-size: var(--font-size-xl);
+      padding-left: var(--spacing-md);
     }
   }
 </style>
