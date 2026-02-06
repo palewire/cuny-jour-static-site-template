@@ -1,11 +1,11 @@
 <!--
-  ImageWithCaption.svelte — Photo/Graphic Display Component
+  Image.svelte — Photo/Graphic Display Component
 
   Displays images with captions and photo credits, essential for journalism.
   Supports different sizes and optional credit attribution.
 
   USAGE EXAMPLE:
-  <ImageWithCaption
+  <Image
     src="/images/city-hall.jpg"
     alt="City Hall building at sunset"
     caption="City Hall, where the budget vote took place Tuesday evening."

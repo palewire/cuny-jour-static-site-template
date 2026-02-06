@@ -5,7 +5,7 @@
   // Import all the news furniture components
   import ArticleHeader from '$lib/components/ArticleHeader.svelte';
   import ArticleBody from '$lib/components/ArticleBody.svelte';
-  import ImageWithCaption from '$lib/components/ImageWithCaption.svelte';
+  import Image from '$lib/components/Image.svelte';
   import RelatedLinks from '$lib/components/RelatedLinks.svelte';
 
   // Article metadata
@@ -38,7 +38,7 @@
   />
 
   <!-- Lead Image: Animated gif of students at the journalism school -->
-  <ImageWithCaption
+  <Image
     src="/example-photo.gif"
     alt="The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan."
     caption="The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan."
