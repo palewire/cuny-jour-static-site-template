@@ -79,16 +79,16 @@
     flex-wrap: wrap;
     align-items: center;
     gap: var(--spacing-sm);
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--color-accent);
+    padding: var(--font-size-xs) var(--spacing-sm);
+    border-left: var(--border-width-accent) solid var(--color-accent);
     background-color: var(--color-light-gray);
   }
 
   .meta-item {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
-    font-size: 0.875rem;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
     color: var(--color-medium-gray);
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -112,11 +112,11 @@
     .meta {
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.5rem;
+      gap: var(--spacing-xs);
     }
 
     .meta-item {
-      font-size: 0.8125rem;
+      font-size: var(--font-size-sm);
     }
   }
 </style>

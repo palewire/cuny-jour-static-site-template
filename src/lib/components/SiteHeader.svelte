@@ -37,16 +37,16 @@
 <style>
   .site-header {
     border-bottom: 0px solid var(--color-accent);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--color-shadow);
   }
 
   /* Full-width blue background with animated dark-to-light gradient */
   .masthead-wrapper {
     background: linear-gradient(
       90deg,
-      #002266 0%,
-      #0033A1 50%,
-      #0066CC 100%
+      var(--color-cuny-blue-dark) 0%,
+      var(--color-cuny-blue) 50%,
+      var(--color-cuny-blue-light) 100%
     );
     background-size: 200% 100%;
     animation: gradient-sweep 6s ease-in-out infinite;
@@ -69,7 +69,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1.5rem;
+    padding: var(--font-size-xs) var(--spacing-md);
     max-width: var(--max-width-wide);
     margin: 0 auto;
   }
@@ -123,16 +123,16 @@
     display: flex;
     flex-wrap: nowrap;
     list-style: none;
-    gap: 1.5rem;
+    gap: var(--spacing-md);
     margin: 0;
     padding: 0;
   }
 
   .nav-link {
-    color: white;
+    color: var(--color-white);
     text-decoration: none;
     font-family: var(--font-sans);
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -141,7 +141,7 @@
   }
 
   .nav-link:hover {
-    color: white;
+    color: var(--color-white);
     opacity: 0.8;
     text-decoration: none;
   }
@@ -150,7 +150,7 @@
   @media (max-width: 1200px) {
     .masthead {
       justify-content: center;
-      padding: 0.5rem 1rem;
+      padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     .main-nav {
@@ -158,12 +158,12 @@
     }
 
     .logo-nycity {
-      font-size: 0.875rem;
+      font-size: var(--font-size-sm);
       padding: 0.15rem 0.35rem;
     }
 
     .logo-news-service {
-      font-size: 0.875rem;
+      font-size: var(--font-size-sm);
       padding: 0.15rem 0.35rem;
     }
   }

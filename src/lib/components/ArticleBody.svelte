@@ -23,7 +23,7 @@
 <style>
   .article-body {
     font-family: var(--font-sans);
-    font-size: 1.125rem;
+    font-size: var(--font-size-lg);
     line-height: 1.8;
     color: var(--color-text);
   }
@@ -69,11 +69,11 @@
 
   /* Block quotes - NYCity style with blue left border */
   .article-body :global(blockquote) {
-    border-left: 4px solid var(--color-accent);
+    border-left: var(--border-width-accent) solid var(--color-accent);
     margin: var(--spacing-lg) 0;
     padding: var(--spacing-sm) var(--spacing-md);
     font-style: italic;
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
     line-height: 1.6;
     color: var(--color-dark);
   }
@@ -100,12 +100,12 @@
 
   @media (max-width: 768px) {
     .article-body {
-      font-size: 1rem;
+      font-size: var(--font-size-base);
       line-height: 1.75;
     }
 
     .article-body :global(blockquote) {
-      font-size: 1.125rem;
+      font-size: var(--font-size-lg);
       padding-left: var(--spacing-sm);
     }
   }

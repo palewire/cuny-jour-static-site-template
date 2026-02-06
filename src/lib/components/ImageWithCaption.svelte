@@ -94,13 +94,13 @@
   }
 
   .caption {
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
     line-height: 1.4;
     color: var(--color-text);
   }
 
   .credit {
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs);
     color: var(--color-medium-gray);
     font-style: italic;
   }
@@ -111,11 +111,11 @@
     }
 
     .caption {
-      font-size: 0.8125rem;
+      font-size: var(--font-size-sm);
     }
 
     .credit {
-      font-size: 0.6875rem;
+      font-size: var(--font-size-xs);
     }
   }
 </style>

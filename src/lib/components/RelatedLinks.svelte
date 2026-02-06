@@ -47,7 +47,7 @@
     align-items: center;
     gap: var(--spacing-sm);
     font-family: var(--font-sans);
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -71,7 +71,7 @@
   .link-item {
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
   }
 
   .link-item:last-child {
@@ -82,7 +82,7 @@
 
   .link {
     font-family: var(--font-serif);
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
     font-weight: 400;
     color: var(--color-dark);
     text-decoration: none;
@@ -98,7 +98,7 @@
 
   @media (max-width: 768px) {
     .link {
-      font-size: 1.125rem;
+      font-size: var(--font-size-lg);
     }
   }
 </style>
