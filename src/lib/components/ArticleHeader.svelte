@@ -1,16 +1,17 @@
 <!--
-  ArticleHeader.svelte — NYCity News Service Style Article Header
+@component
+ArticleHeader.svelte — NYCity News Service Style Article Header
 
-  Displays the headline and metadata line with icons in the NYCity style:
-  - Large serif headline
-  - Bordered metadata box with date, authors, and optional source
+Displays the headline and metadata line with icons in the NYCity style:
+- Large serif headline
+- Bordered metadata box with date, authors, and optional source
 
-  USAGE EXAMPLE:
-  <ArticleHeader
-    headline="City Council Approves New Budget"
-    byline="Jane Smith, John Doe"
-    pubDate="2024-01-15"
-  />
+USAGE EXAMPLE:
+<ArticleHeader
+  headline="City Council Approves New Budget"
+  byline="Jane Smith, John Doe"
+  pubDate="2024-01-15"
+/>
 -->
 <script>
   let {

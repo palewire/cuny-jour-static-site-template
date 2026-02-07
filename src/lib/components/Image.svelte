@@ -1,17 +1,18 @@
 <!--
-  Image.svelte — Photo/Graphic Display Component
+@component
+Image.svelte — Photo/Graphic Display Component
 
-  Displays images with captions and photo credits, essential for journalism.
-  Supports different sizes and optional credit attribution.
+Displays images with captions and photo credits, essential for journalism.
+Supports different sizes and optional credit attribution.
 
-  USAGE EXAMPLE:
-  <Image
-    src="/images/city-hall.jpg"
-    alt="City Hall building at sunset"
-    caption="City Hall, where the budget vote took place Tuesday evening."
-    credit="Jane Smith / The Daily News"
-    size="large"
-  />
+USAGE EXAMPLE:
+<Image
+  src="/images/city-hall.jpg"
+  alt="City Hall building at sunset"
+  caption="City Hall, where the budget vote took place Tuesday evening."
+  credit="Jane Smith / The Daily News"
+  size="large"
+/>
 -->
 <script>
   import { base } from '$app/paths';

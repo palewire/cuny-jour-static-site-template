@@ -1,7 +1,8 @@
 <!--
-  This is the LAYOUT file.
-  It wraps every page on your site.
-  Use it for headers, footers, and navigation that appear on all pages.
+@component
+This is the LAYOUT file.
+It wraps every page on your site.
+Use it for headers, footers, and navigation that appear on all pages.
 -->
 <script>
   // Import global styles

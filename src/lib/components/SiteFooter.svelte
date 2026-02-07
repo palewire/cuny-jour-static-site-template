@@ -1,11 +1,12 @@
 <!--
-  SiteFooter.svelte — Site Footer Component (NYCity News Service Style)
+@component
+SiteFooter.svelte — Site Footer Component (NYCity News Service Style)
 
-  A footer matching the NYCity News Service design.
-  Features CUNY logo and key navigation links.
+A footer matching the NYCity News Service design.
+Features CUNY logo and key navigation links.
 
-  USAGE EXAMPLE:
-  <SiteFooter />
+USAGE EXAMPLE:
+<SiteFooter />
 -->
 <script>
   import { base } from '$app/paths';

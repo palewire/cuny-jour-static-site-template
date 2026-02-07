@@ -1,17 +1,18 @@
 <!--
-  RelatedLinks.svelte — NYCity News Service Style Related Stories
+@component
+RelatedLinks.svelte — NYCity News Service Style Related Stories
 
-  Displays a "Related Stories" or "Recent News" section at the bottom 
-  of articles with blue accent heading style.
+Displays a "Related Stories" or "Recent News" section at the bottom 
+of articles with blue accent heading style.
 
-  USAGE EXAMPLE:
-  <RelatedLinks
-    title="RELATED STORIES"
-    links={[
-      { headline: 'Mayor Announces New Transit Plan', href: '/transit-plan' },
-      { headline: 'Budget Talks Continue Downtown', href: '/budget-talks' }
-    ]}
-  />
+USAGE EXAMPLE:
+<RelatedLinks
+  title="RELATED STORIES"
+  links={[
+    { headline: 'Mayor Announces New Transit Plan', href: '/transit-plan' },
+    { headline: 'Budget Talks Continue Downtown', href: '/budget-talks' }
+  ]}
+/>
 -->
 <script>
   let {

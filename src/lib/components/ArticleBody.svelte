@@ -1,14 +1,15 @@
 <!--
-  ArticleBody.svelte — NYCity News Service Style Article Content
+@component
+ArticleBody.svelte — NYCity News Service Style Article Content
 
-  A wrapper component that provides proper typography for article body text.
-  Uses sans-serif font for body, serif for subheadings.
+A wrapper component that provides proper typography for article body text.
+Uses sans-serif font for body, serif for subheadings.
 
-  USAGE EXAMPLE:
-  <ArticleBody>
-    <p>Your article paragraphs go here...</p>
-    <p>Each paragraph will be properly styled.</p>
-  </ArticleBody>
+USAGE EXAMPLE:
+<ArticleBody>
+  <p>Your article paragraphs go here...</p>
+  <p>Each paragraph will be properly styled.</p>
+</ArticleBody>
 -->
 <script>
   let {
