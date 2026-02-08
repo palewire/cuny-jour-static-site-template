@@ -2,7 +2,7 @@
 @component
 RelatedLinks.svelte — NYCity News Service Style Related Stories
 
-Displays a "Related Stories" or "Recent News" section at the bottom 
+Displays a "Related Stories" or "Recent News" section at the bottom
 of articles with blue accent heading style.
 
 USAGE EXAMPLE:
