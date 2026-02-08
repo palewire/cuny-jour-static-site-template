@@ -1,5 +1,6 @@
 <!--
-  This is your page!
+@component
+This is your page!
 -->
 <script>
   // Import all the news furniture components
