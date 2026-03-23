@@ -37,10 +37,10 @@
   name="With Navigation"
   args={{
     navLinks: [
-      { href: '/the-poem', label: 'The Poem' },
-      { href: '/the-statue', label: 'The Statue' },
-      { href: '/emma-lazarus', label: 'Emma Lazarus' },
-      { href: '/immigration', label: 'Immigration' },
+      { href: '/programs', label: 'Programs' },
+      { href: '/admissions', label: 'Admissions' },
+      { href: '/media-centers', label: 'Media Centers' },
+      { href: '/about', label: 'About' },
     ],
   }}
 />
@@ -49,6 +49,6 @@
 <Story
   name="Single Link"
   args={{
-    navLinks: [{ href: '/the-new-colossus', label: 'The New Colossus' }],
+    navLinks: [{ href: '/about', label: 'About' }],
   }}
 />

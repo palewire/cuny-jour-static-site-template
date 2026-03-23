@@ -19,9 +19,8 @@
   import RelatedLinks from '$lib/components/RelatedLinks.svelte';
   import SiteFooter   from '$lib/components/SiteFooter.svelte';
 
-  // Freely-licensed Statue of Liberty image from Wikimedia Commons
-  const LEAD_IMAGE =
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Statue_of_Liberty_7.jpg/1200px-Statue_of_Liberty_7.jpg';
+  // Demo image — the animated gif used on the main page
+  const LEAD_IMAGE = '/example-photo.gif';
 
   const { Story } = defineMeta({
     title: 'Compositions/Article Page',
@@ -41,76 +40,64 @@
 <Story name="Default">
   <SiteHeader
     navLinks={[
-      { href: '/the-poem',       label: 'The Poem' },
-      { href: '/the-statue',     label: 'The Statue' },
-      { href: '/emma-lazarus',   label: 'Emma Lazarus' },
-      { href: '/immigration',    label: 'Immigration' },
+      { href: '/programs',       label: 'Programs' },
+      { href: '/admissions',     label: 'Admissions' },
+      { href: '/media-centers',  label: 'Media Centers' },
+      { href: '/about',          label: 'About' },
     ]}
   />
 
   <div class="container">
     <ArticleHeader
-      headline="How Emma Lazarus Gave Voice to the Statue of Liberty"
-      byline="Sarah Chen and Michael Rivera"
-      pubDate="1883-11-02"
+      headline="Become a force for good. Join our next class."
+      byline="NYCity News Service"
+      pubDate="2026-01-31"
     />
 
     <Image
       src={LEAD_IMAGE}
-      alt="The Statue of Liberty on Liberty Island in New York Harbor"
-      caption="The Statue of Liberty, a gift from France dedicated in 1886, stands as a symbol of freedom and welcome in New York Harbor."
-      credit="Wikimedia Commons / Public Domain"
+      alt="The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan."
+      caption="The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan."
+      credit="Craig Newmark Graduate School of Journalism"
     />
 
     <ArticleBody>
       <p>
-        In 1883, a young poet named Emma Lazarus wrote a sonnet to help raise funds for the
-        construction of the pedestal that would hold the Statue of Liberty. That poem, "The New
-        Colossus," would go on to become one of the most recognized works in American literature —
-        and the defining statement of the nation's identity as a haven for immigrants.
+        At the Craig Newmark Graduate School of Journalism at the City University of New York, change is in our DNA. That comes of being born in 2006, as the digital revolution was transforming our profession in ways none of us could have imagined.
       </p>
       <p>
-        Lazarus, born in 1849 to a wealthy Sephardic Jewish family in New York City, was already an
-        accomplished writer by the time she was asked to contribute to the fundraising effort. But it
-        was her encounters with Jewish refugees fleeing pogroms in Eastern Europe that gave the poem
-        its emotional urgency.
+        We fashioned a school to teach the latest storytelling, entrepreneurial, and technological skills alongside reporting, writing, and ethics. Beyond that, we've crafted a culture that spurns complacency, that isn't afraid to pivot before the ground under us shifts.
       </p>
       <blockquote>
         <p>
-          "Give me your tired, your poor, / Your huddled masses yearning to breathe free, / The
-          wretched refuse of your teeming shore."
+          "Our mission is to serve the public interest – by training new journalists from varied economic, racial, and cultural backgrounds who will bring much-needed diversity to newsrooms."
         </p>
       </blockquote>
       <p>
-        Lazarus died in 1887, just a year after the statue's dedication, and her sonnet was largely
-        forgotten. In 1903, a friend named Georgina Schuyler successfully campaigned to have the
-        poem mounted on a bronze plaque inside the pedestal, ensuring its words would endure.
+        Our low tuition rates, along with the added backing of private donors, allow candidates for our master's degrees in journalism and engagement journalism to receive a world-class education at an affordable price. We also offer a unique bilingual master's in journalism for students fluent in English and Spanish.
       </p>
 
       <h2>By the Numbers</h2>
     </ArticleBody>
 
     <Dashboard>
-      <BigNumber number="305 ft"  label="Height to Torch Tip" />
-      <BigNumber number="354"     label="Steps to the Crown"  footnote="From pedestal base to crown" />
-      <BigNumber number="4M"      label="Annual Visitors" />
-      <BigNumber number="1886"    label="Year Dedicated"      footnote="October 28, 1886" />
+      <BigNumber number="2006"  label="Year Founded" />
+      <BigNumber number="3"     label="Media Centers"            footnote="Research, training, and thought leadership" />
+      <BigNumber number="3"     label="Master's Degree Programs" />
     </Dashboard>
 
     <ArticleBody>
       <p>
-        The statue was designated a UNESCO World Heritage Site in 1984 and continues to serve as a
-        global symbol of freedom and democracy. The copper exterior — just 3/32 of an inch thick —
-        was assembled on an iron skeleton engineered by Alexandre Gustave Eiffel.
+        Our three media centers provide research, training, thought leadership, industry meet-ups, and financial support for quality journalistic work. We also offer a robust professional education program through regular evening and weekend workshops. And we support in-depth reporting projects of professional journalists through fellowship grants.
       </p>
     </ArticleBody>
 
     <RelatedLinks
       title="RELATED STORIES"
       links={[
-        { headline: 'The Forgotten Poet: How Emma Lazarus Shaped America\'s Immigration Identity', href: '/emma-lazarus-biography' },
-        { headline: 'Inside the Statue of Liberty\'s 354-Step Climb to the Crown', href: '/statue-crown-tour' },
-        { headline: 'From France to New York Harbor: The Epic Journey of Lady Liberty', href: '/statue-history' },
+        { headline: 'How America\'s top news organizations escape rigid publishing systems to design beautiful data-driven stories on deadline.', href: 'https://palewi.re/docs/coding-the-news/' },
+        { headline: 'How to install, configure and use Visual Studio Code, GitHub and Copilot', href: 'https://palewi.re/docs/coding-the-news/scripts/week-1/' },
+        { headline: 'How to publish a website with Node.JS and GitHub Actions', href: 'https://palewi.re/docs/coding-the-news/scripts/week-2/' },
       ]}
     />
   </div>
@@ -124,37 +111,30 @@
 
   <div class="container">
     <ArticleHeader
-      headline='"The New Colossus" Turns 140: The Poem That Defined a Nation'
-      byline="The NYCity News Service History Desk"
-      pubDate="2023-11-02"
+      headline="At the Craig Newmark Graduate School of Journalism, Change Is in Our DNA"
+      byline="NYCity News Service"
+      pubDate="2026-01-31"
     />
 
     <ArticleBody>
       <p>
-        One hundred and forty years ago, Emma Lazarus penned a sonnet that would eventually be
-        inscribed at the base of the Statue of Liberty. The poem's most famous lines — "Give me
-        your tired, your poor, your huddled masses yearning to breathe free" — have since become
-        among the most quoted words in American history.
+        At the Craig Newmark Graduate School of Journalism at the City University of New York, change is in our DNA. That comes of being born in 2006, as the digital revolution was transforming our profession in ways none of us could have imagined.
       </p>
-      <h2>A Poem Ahead of Its Time</h2>
+      <h2>Affordable Excellence</h2>
       <p>
-        Written at a time of rising anti-immigrant sentiment, "The New Colossus" offered a
-        radically different vision of what America could be: not a monument to military conquest,
-        but a beacon of welcome for the world's displaced.
+        Our low tuition rates, along with the added backing of private donors, allow candidates for our master's degrees in journalism and engagement journalism to receive a world-class education at an affordable price. We also offer a unique bilingual master's in journalism for students fluent in English and Spanish.
       </p>
-      <h3>Rediscovery</h3>
+      <h3>Professional Education</h3>
       <p>
-        After Lazarus died in 1887, her poem slipped into obscurity. It was not until 1903, when
-        Georgina Schuyler campaigned to have a bronze plaque engraved with the full text installed
-        inside the pedestal, that the sonnet found its permanent home.
+        We also offer a robust professional education program through regular evening and weekend workshops. And we support in-depth reporting projects of professional journalists through fellowship grants.
       </p>
     </ArticleBody>
 
     <RelatedLinks
       title="RELATED STORIES"
       links={[
-        { headline: 'Full Text: "The New Colossus" by Emma Lazarus (1883)', href: '/new-colossus-text' },
-        { headline: 'Ellis Island and the Immigrant Experience in New York', href: '/ellis-island' },
+        { headline: 'How America\'s top news organizations escape rigid publishing systems to design beautiful data-driven stories on deadline.', href: 'https://palewi.re/docs/coding-the-news/' },
+        { headline: 'How to install, configure and use Visual Studio Code, GitHub and Copilot', href: 'https://palewi.re/docs/coding-the-news/scripts/week-1/' },
       ]}
     />
   </div>
@@ -166,32 +146,27 @@
 <Story name="Data Driven">
   <SiteHeader
     navLinks={[
-      { href: '/data', label: 'Data' },
-      { href: '/maps', label: 'Maps' },
+      { href: '/programs', label: 'Programs' },
+      { href: '/admissions', label: 'Admissions' },
     ]}
   />
 
   <div class="container">
     <ArticleHeader
-      headline="Statue of Liberty by the Numbers: Everything You Need to Know"
-      byline="The NYCity Data Desk"
-      pubDate="2024-07-04"
+      headline="Craig Newmark Graduate School of Journalism by the Numbers"
+      byline="NYCity News Service"
+      pubDate="2026-01-31"
     />
 
     <Dashboard>
-      <BigNumber number="305 ft"  label="Total Height"         footnote="Ground to torch tip" />
-      <BigNumber number="151 ft"  label="Statue Height"        footnote="Heel to top of head" />
-      <BigNumber number="354"     label="Steps"                footnote="Base to crown" />
-      <BigNumber number="25"      label="Crown Windows" />
-      <BigNumber number="7"       label="Crown Rays"           footnote="One per continent/ocean" />
-      <BigNumber number="1984"    label="UNESCO Status"        footnote="World Heritage Site" />
+      <BigNumber number="2006"  label="Year Founded"             footnote="Born during the digital revolution" />
+      <BigNumber number="3"     label="Master's Degree Programs" footnote="Journalism, engagement journalism, and bilingual" />
+      <BigNumber number="3"     label="Media Centers"            footnote="Research, training, and thought leadership" />
     </Dashboard>
 
     <ArticleBody>
       <p>
-        The Statue of Liberty is one of the most meticulously documented landmarks in the world.
-        From the precise thickness of her copper skin to the exact number of steps in her spiral
-        staircase, every element has been measured and catalogued.
+        At a time when our profession is reeling from financial pressures and lack of trust, the Newmark Graduate School of Journalism is committed to producing the next generation of skilled, ethically minded, and diverse journalists. We invite you to be part of our world.
       </p>
     </ArticleBody>
   </div>

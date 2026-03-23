@@ -37,16 +37,16 @@
     title: 'RELATED STORIES',
     links: [
       {
-        headline: 'The Forgotten Poet: How Emma Lazarus Shaped America\'s Immigration Identity',
-        href: '/emma-lazarus-biography',
+        headline: 'How America\'s top news organizations escape rigid publishing systems to design beautiful data-driven stories on deadline.',
+        href: 'https://palewi.re/docs/coding-the-news/',
       },
       {
-        headline: 'Inside the Statue of Liberty\'s 354-Step Climb to the Crown',
-        href: '/statue-crown-tour',
+        headline: 'How to install, configure and use Visual Studio Code, GitHub and Copilot',
+        href: 'https://palewi.re/docs/coding-the-news/scripts/week-1/',
       },
       {
-        headline: 'From France to New York Harbor: The Epic Journey of Lady Liberty',
-        href: '/statue-history',
+        headline: 'How to publish a website with Node.JS and GitHub Actions',
+        href: 'https://palewi.re/docs/coding-the-news/scripts/week-2/',
       },
     ],
   }}
@@ -58,8 +58,8 @@
   args={{
     title: 'MORE ON THIS TOPIC',
     links: [
-      { headline: 'The Full Text of "The New Colossus" by Emma Lazarus', href: '/new-colossus-text' },
-      { headline: 'Ellis Island and the Immigrant Experience', href: '/ellis-island' },
+      { headline: 'How to install, configure and use Visual Studio Code, GitHub and Copilot', href: 'https://palewi.re/docs/coding-the-news/scripts/week-1/' },
+      { headline: 'How to publish a website with Node.JS and GitHub Actions', href: 'https://palewi.re/docs/coding-the-news/scripts/week-2/' },
     ],
   }}
 />
@@ -70,7 +70,7 @@
   args={{
     title: 'RELATED STORIES',
     links: [
-      { headline: 'Statue of Liberty Named UNESCO World Heritage Site in 1984', href: '/unesco-designation' },
+      { headline: 'How America\'s top news organizations escape rigid publishing systems to design beautiful data-driven stories on deadline.', href: 'https://palewi.re/docs/coding-the-news/' },
     ],
   }}
 />

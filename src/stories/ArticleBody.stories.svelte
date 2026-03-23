@@ -29,21 +29,13 @@
   <div class="story-container">
     <ArticleBody>
       <p>
-        In 1883, a young poet named Emma Lazarus wrote a sonnet to help raise funds for the
-        construction of the pedestal that would hold the Statue of Liberty. That poem, "The New
-        Colossus," would go on to become one of the most recognized works in American literature —
-        and the defining statement of the nation's identity as a haven for immigrants.
+        At the Craig Newmark Graduate School of Journalism at the City University of New York, change is in our DNA. That comes of being born in 2006, as the digital revolution was transforming our profession in ways none of us could have imagined.
       </p>
       <p>
-        Lazarus, born in 1849 to a wealthy Sephardic Jewish family in New York City, was already an
-        accomplished writer by the time she was asked to contribute to the fundraising effort. But it
-        was her encounters with Jewish refugees fleeing pogroms in Eastern Europe that gave the poem
-        its emotional urgency.
+        We fashioned a school to teach the latest storytelling, entrepreneurial, and technological skills alongside reporting, writing, and ethics. Beyond that, we've crafted a culture that spurns complacency, that isn't afraid to pivot before the ground under us shifts.
       </p>
       <p>
-        "Give me your tired, your poor, your huddled masses yearning to breathe free," she wrote,
-        imagining the statue as a "Mother of Exiles" — not a monument to military conquest like the
-        ancient Colossus of Rhodes, but a beacon of welcome for the world's displaced and dispossessed.
+        Our mission is to serve the public interest – by training new journalists from varied economic, racial, and cultural backgrounds who will bring much-needed diversity to newsrooms, by helping mid-career journalists retool their skills, and by partnering with other media organizations to find new paths to excellence.
       </p>
     </ArticleBody>
   </div>
@@ -54,21 +46,15 @@
   <div class="story-container">
     <ArticleBody>
       <p>
-        The Statue of Liberty, a gift from France to the United States, was dedicated on October 28,
-        1886. It would take another 17 years before Emma Lazarus's words found their permanent home
-        at its base.
+        At the Craig Newmark Graduate School of Journalism at the City University of New York, change is in our DNA. That comes of being born in 2006, as the digital revolution was transforming our profession in ways none of us could have imagined.
       </p>
-      <h2>A Gift Between Nations</h2>
+      <h2>Affordable Excellence</h2>
       <p>
-        French sculptor Frédéric Auguste Bartholdi designed the statue, while Alexandre Gustave
-        Eiffel — who would later build his famous tower — engineered the internal iron framework.
-        The copper exterior, just 3/32 of an inch thick, was assembled on a massive iron skeleton.
+        Our low tuition rates, along with the added backing of private donors, allow candidates for our master's degrees in journalism and engagement journalism to receive a world-class education at an affordable price. We also offer a unique bilingual master's in journalism for students fluent in English and Spanish.
       </p>
-      <h3>The Forgotten Poem</h3>
+      <h3>Media Centers and Professional Education</h3>
       <p>
-        Lazarus died in 1887, just a year after the statue's dedication, and her sonnet was largely
-        forgotten. In 1903, a friend named Georgina Schuyler successfully campaigned to have the
-        poem mounted on a bronze plaque inside the pedestal, ensuring its words would endure.
+        Our three media centers provide research, training, thought leadership, industry meet-ups, and financial support for quality journalistic work. We also offer a robust professional education program through regular evening and weekend workshops.
       </p>
     </ArticleBody>
   </div>
@@ -79,18 +65,15 @@
   <div class="story-container">
     <ArticleBody>
       <p>
-        Emma Lazarus's "The New Colossus" reimagined the Statue of Liberty not as a symbol of
-        imperial power, but as a welcoming mother figure standing at the gates of a new world.
+        At a time when our profession is reeling from financial pressures and lack of trust, the Newmark Graduate School of Journalism is committed to producing the next generation of skilled, ethically minded, and diverse journalists.
       </p>
       <blockquote>
         <p>
-          "Give me your tired, your poor, / Your huddled masses yearning to breathe free, / The
-          wretched refuse of your teeming shore. / Send these, the homeless, tempest-tost to me, /
-          I lift my lamp beside the golden door!"
+          "Our mission is to serve the public interest – by training new journalists from varied economic, racial, and cultural backgrounds who will bring much-needed diversity to newsrooms."
         </p>
       </blockquote>
       <p>
-        — Emma Lazarus, "The New Colossus" (1883)
+        We invite you to be part of our world.
       </p>
     </ArticleBody>
   </div>
@@ -101,18 +84,16 @@
   <div class="story-container">
     <ArticleBody>
       <p>
-        The Statue of Liberty remains one of the most visited landmarks in the world. Learn more at
-        the <a href="https://www.nps.gov/stli/">National Park Service website</a>.
+        The Craig Newmark Graduate School of Journalism offers several paths to a career in journalism. Learn more at the <a href="https://www.journalism.cuny.edu/">school's website</a>.
       </p>
       <ul>
-        <li>Height from ground to torch: 305 feet (93 meters)</li>
-        <li>Weight of copper and steel: approximately 225 tons</li>
-        <li>Number of steps from base to crown: 354</li>
-        <li>Annual visitors: approximately 4 million</li>
+        <li>Master's degree in journalism</li>
+        <li>Master's degree in engagement journalism</li>
+        <li>Bilingual master's in journalism (English and Spanish)</li>
+        <li>Professional education through evening and weekend workshops</li>
       </ul>
       <p>
-        The statue was designated a UNESCO World Heritage Site in 1984 and continues to serve as a
-        global symbol of freedom and democracy.
+        Classes are led by accomplished full-time faculty and adjuncts, who tap their networks to help students and graduates find internships, freelance opportunities and — the ultimate prize — jobs.
       </p>
     </ArticleBody>
   </div>

@@ -26,26 +26,26 @@
 <!-- Default: three BigNumber cards in a row -->
 <Story name="Default">
   <Dashboard>
-    <BigNumber number="305 ft" label="Height to Torch Tip" />
-    <BigNumber number="4M" label="Annual Visitors" />
-    <BigNumber number="225 tons" label="Weight of Copper & Steel" />
+    <BigNumber number="2006" label="Year Founded" />
+    <BigNumber number="3" label="Media Centers" />
+    <BigNumber number="3" label="Master's Degree Programs" />
   </Dashboard>
 </Story>
 
 <!-- Two Stats: two-card layout -->
 <Story name="Two Stats">
   <Dashboard>
-    <BigNumber number="1886" label="Year Dedicated" />
-    <BigNumber number="354" label="Steps to the Crown" footnote="From pedestal base to crown" />
+    <BigNumber number="2006" label="Year Founded" />
+    <BigNumber number="3" label="Media Centers" footnote="Research, training, and thought leadership" />
   </Dashboard>
 </Story>
 
 <!-- Three Stats: three-card layout -->
 <Story name="Three Stats">
   <Dashboard>
-    <BigNumber number="151 ft" label="Statue Height" />
-    <BigNumber number="25" label="Crown Windows" />
-    <BigNumber number="7" label="Crown Rays" />
+    <BigNumber number="3" label="Master's Degree Programs" />
+    <BigNumber number="3" label="Media Centers" />
+    <BigNumber number="2006" label="Year Founded" />
   </Dashboard>
 </Story>
 
@@ -53,19 +53,19 @@
 <Story name="With Footnotes">
   <Dashboard>
     <BigNumber
-      number="1883"
-      label="Year Poem Written"
-      footnote="Emma Lazarus, 'The New Colossus'"
+      number="2006"
+      label="Year Founded"
+      footnote="Born during the digital revolution"
     />
     <BigNumber
-      number="1903"
-      label="Year Plaque Mounted"
-      footnote="On the pedestal's inner wall"
+      number="3"
+      label="Media Centers"
+      footnote="Research, training, and thought leadership"
     />
     <BigNumber
-      number="3/32 in"
-      label="Copper Thickness"
-      footnote="About two stacked pennies"
+      number="3"
+      label="Master's Degree Programs"
+      footnote="Journalism, engagement journalism, and bilingual"
     />
   </Dashboard>
 </Story>

@@ -17,9 +17,8 @@
   import { defineMeta } from '@storybook/addon-svelte-csf';
   import Image from '$lib/components/Image.svelte';
 
-  // Freely-licensed Statue of Liberty image from Wikimedia Commons
-  const DEMO_IMAGE =
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Statue_of_Liberty_7.jpg/1200px-Statue_of_Liberty_7.jpg';
+  // Demo image — the animated gif used on the main page
+  const DEMO_IMAGE = '/example-photo.gif';
 
   const { Story } = defineMeta({
     title: 'Components/Image',
@@ -50,7 +49,7 @@
     },
     args: {
       src: DEMO_IMAGE,
-      alt: 'The Statue of Liberty on Liberty Island in New York Harbor',
+      alt: 'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
     },
   });
 </script>
@@ -60,10 +59,10 @@
   name="Default"
   args={{
     src: DEMO_IMAGE,
-    alt: 'The Statue of Liberty on Liberty Island in New York Harbor',
+    alt: 'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
     caption:
-      'The Statue of Liberty, a gift from France dedicated in 1886, stands as a symbol of freedom and welcome in New York Harbor.',
-    credit: 'Wikimedia Commons / Public Domain',
+      'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
+    credit: 'Craig Newmark Graduate School of Journalism',
     size: 'full',
   }}
 />
@@ -73,7 +72,7 @@
   name="No Caption"
   args={{
     src: DEMO_IMAGE,
-    alt: 'The Statue of Liberty on Liberty Island in New York Harbor',
+    alt: 'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
     size: 'full',
   }}
 />
@@ -83,9 +82,9 @@
   name="Caption Only"
   args={{
     src: DEMO_IMAGE,
-    alt: 'The Statue of Liberty on Liberty Island in New York Harbor',
+    alt: 'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
     caption:
-      'Lady Liberty lifts her torch above New York Harbor, greeting arriving visitors and immigrants alike.',
+      'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
     size: 'full',
   }}
 />
@@ -94,11 +93,11 @@
 <Story
   name="Large Size"
   args={{
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Statue_of_Liberty_7.jpg/720px-Statue_of_Liberty_7.jpg',
-    alt: 'The Statue of Liberty seen from below against a blue sky',
+    src: DEMO_IMAGE,
+    alt: 'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
     caption:
-      'The statue rises 305 feet from the ground to the tip of her torch, built atop a pedestal designed by architect Richard Morris Hunt.',
-    credit: 'Wikimedia Commons / Public Domain',
+      'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
+    credit: 'Craig Newmark Graduate School of Journalism',
     size: 'large',
   }}
 />
@@ -107,11 +106,11 @@
 <Story
   name="Medium Size"
   args={{
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg/480px-Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg',
-    alt: 'Close-up of the Statue of Liberty crown and face',
+    src: DEMO_IMAGE,
+    alt: 'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
     caption:
-      'The crown features 25 windows and seven rays, representing the seven continents and oceans of the world.',
-    credit: 'Wikimedia Commons / CC BY-SA 2.0',
+      'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
+    credit: 'Craig Newmark Graduate School of Journalism',
     size: 'medium',
   }}
 />
@@ -120,10 +119,11 @@
 <Story
   name="Small Size"
   args={{
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Emma_Lazarus.jpg/320px-Emma_Lazarus.jpg',
-    alt: 'Portrait of poet Emma Lazarus',
-    caption: 'Emma Lazarus (1849–1887), author of "The New Colossus."',
-    credit: 'Wikimedia Commons / Public Domain',
+    src: DEMO_IMAGE,
+    alt: 'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
+    caption:
+      'The Craig Newmark Graduate School of Journalism is at 219 West 40th Street in Midtown Manhattan.',
+    credit: 'Craig Newmark Graduate School of Journalism',
     size: 'small',
   }}
 />
