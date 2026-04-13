@@ -14,13 +14,17 @@ USAGE EXAMPLE:
 }} />
 -->
 <script>
+  import { asset } from '$app/paths';
+
   let {
     photo, // Object with filename, title, caption, and credit
   } = $props();
+
+  const resolvedSrc = $derived(asset(`/photos/${photo.filename}`));
 </script>
 
 <div class="slide" data-slide data-photo>
-  <img src="/photos/{photo.filename}" alt={photo.title} />
+  <img src={resolvedSrc} alt={photo.title} />
   <div class="caption">
     <div class="caption-inner">
       <h2>{photo.title}</h2>
