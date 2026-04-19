@@ -97,17 +97,6 @@ USAGE EXAMPLE:
     margin-bottom: var(--spacing-xs);
   }
 
-  /* Dropcap: apply class="dropcap" to the opening <p> */
-  .article-body :global(p.dropcap::first-letter) {
-    font-family: var(--font-serif);
-    font-size: var(--dropcap-font-size);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--dropcap-line-height);
-    float: left;
-    margin-right: var(--dropcap-margin-right);
-    color: var(--dropcap-color);
-  }
-
   /* Strong/Bold text */
   .article-body :global(strong) {
     font-weight: var(--font-weight-semibold);

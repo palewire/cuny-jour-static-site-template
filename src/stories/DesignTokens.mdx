@@ -727,21 +727,6 @@ Defined in `src/app.scss` — import with `var(--token-name)`.
 | `--opacity-hover`       | `0.8`               | Standard hover dimming (images, cards) |
 | `--opacity-hover-faint` | `0.7`               | More pronounced hover dimming          |
 
-## Dropcap
-
-Defined in `src/app.scss` — import with `var(--token-name)`.
-
-Apply `class="dropcap"` to a `<p>` inside `<ArticleBody>` to render a large
-initial letter. The `::first-letter` pseudo-element picks up these tokens
-automatically.
-
-| Token                   | Value              | Usage                            |
-| ----------------------- | ------------------ | -------------------------------- |
-| `--dropcap-font-size`   | `3.5em`            | Size of the initial letter       |
-| `--dropcap-line-height` | `0.8`              | Line-height so the letter aligns |
-| `--dropcap-margin-right`| `0.05em`           | Space between letter and text    |
-| `--dropcap-color`       | `var(--color-dark)`| Color of the initial letter      |
-
 ## SCSS Variables
 
 Defined in `src/lib/styles/_variables.scss` — available after `@use '$lib/styles' as *`.

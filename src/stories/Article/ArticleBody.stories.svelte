@@ -166,48 +166,6 @@
   </div>
 </Story>
 
-<!-- With Dropcap: shows a large initial letter on the first paragraph -->
-<Story
-  name="With Dropcap"
-  parameters={{
-    docs: {
-      source: {
-        code: `<ArticleBody>
-  <p class="dropcap">
-    At the Craig Newmark Graduate School of Journalism at the City University of
-    New York, change is in our DNA. That comes of being born in 2006, as the
-    digital revolution was transforming our profession in ways none of us could
-    have imagined.
-  </p>
-  <p>
-    We fashioned a school to teach the latest storytelling, entrepreneurial, and
-    technological skills alongside reporting, writing, and ethics. Beyond that,
-    we've crafted a culture that spurns complacency, that isn't afraid to pivot
-    before the ground under us shifts.
-  </p>
-</ArticleBody>`,
-      },
-    },
-  }}
->
-  <div class="story-container">
-    <ArticleBody>
-      <p class="dropcap">
-        At the Craig Newmark Graduate School of Journalism at the City
-        University of New York, change is in our DNA. That comes of being born
-        in 2006, as the digital revolution was transforming our profession in
-        ways none of us could have imagined.
-      </p>
-      <p>
-        We fashioned a school to teach the latest storytelling, entrepreneurial,
-        and technological skills alongside reporting, writing, and ethics.
-        Beyond that, we've crafted a culture that spurns complacency, that isn't
-        afraid to pivot before the ground under us shifts.
-      </p>
-    </ArticleBody>
-  </div>
-</Story>
-
 <!-- With Links and Lists: shows inline link and list typography -->
 <Story
   name="With Links and Lists"
