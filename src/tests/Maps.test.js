@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/svelte';
 import Geocoder from '$lib/components/Maps/Geocoder.svelte';
 import Map from '$lib/components/Maps/Map.svelte';
+import MapLegend from '$lib/components/Maps/MapLegend.svelte';
 
 // Mock maplibre-gl so it doesn't try to use WebGL in jsdom
 vi.mock('maplibre-gl', () => {
@@ -43,6 +44,8 @@ vi.mock('maplibre-gl', () => {
       this.removeSource = vi.fn();
       this.removeLayer = vi.fn();
       this.setPaintProperty = vi.fn();
+      this.addControl = vi.fn();
+      this.removeControl = vi.fn();
       this._fireStyleLoad = () => {
         if (this._listeners['style.load']) {
           this._listeners['style.load'].forEach((fn) => fn());
@@ -368,5 +371,142 @@ describe('Map', () => {
     });
     await vi.advanceTimersByTimeAsync(0);
     expect(container.querySelector('figcaption')).toBeNull();
+  });
+});
+
+describe('MapLegend', () => {
+  /** Build a mock map context with spies for addControl / removeControl. */
+  function makeMockContext() {
+    const mockMap = {
+      addControl: vi.fn(),
+      removeControl: vi.fn(),
+    };
+    const ctx = {
+      getMap: () => mockMap,
+      isReady: () => true,
+      onStyleLoad: vi.fn(),
+      offStyleLoad: vi.fn(),
+    };
+    return { mockMap, ctx };
+  }
+
+  // Alias the native Map constructor because the `Map` identifier in this
+  // file is shadowed by the Svelte Map component import.
+  const NativeMap = globalThis.Map;
+
+  it('calls addControl on the map when mounted', () => {
+    const { mockMap, ctx } = makeMockContext();
+    render(MapLegend, {
+      props: { breaks: [10, 50], colors: ['#fff', '#aaa', '#000'] },
+      context: new NativeMap([['maplibre-map', ctx]]),
+    });
+    expect(mockMap.addControl).toHaveBeenCalledOnce();
+  });
+
+  it('passes the requested position to addControl', () => {
+    const { mockMap, ctx } = makeMockContext();
+    render(MapLegend, {
+      props: {
+        breaks: [10],
+        colors: ['#eee', '#333'],
+        position: 'top-left',
+      },
+      context: new NativeMap([['maplibre-map', ctx]]),
+    });
+    expect(mockMap.addControl).toHaveBeenCalledWith(
+      expect.any(Object),
+      'top-left'
+    );
+  });
+
+  it('throws when rendered outside a Map component', () => {
+    expect(() =>
+      render(MapLegend, {
+        props: { breaks: [], colors: [] },
+      })
+    ).toThrow('MapLegend must be placed inside a Map component');
+  });
+
+  it('auto-generates labels from break values', () => {
+    const { mockMap, ctx } = makeMockContext();
+    render(MapLegend, {
+      props: {
+        breaks: [25, 75],
+        colors: ['#f7fbff', '#9ecae1', '#2171b5'],
+      },
+      context: new NativeMap([['maplibre-map', ctx]]),
+    });
+
+    const control = mockMap.addControl.mock.calls[0][0];
+    const container = control.onAdd();
+
+    const labelTexts = Array.from(container.querySelectorAll('span:last-child')).map(
+      (el) => el.textContent
+    );
+    expect(labelTexts).toContain('< 25');
+    expect(labelTexts).toContain('25 \u2013 75');
+    expect(labelTexts).toContain('\u2265 75');
+  });
+
+  it('uses custom labels when provided', () => {
+    const { mockMap, ctx } = makeMockContext();
+    render(MapLegend, {
+      props: {
+        breaks: [50],
+        colors: ['#eee', '#333'],
+        labels: ['Low', 'High'],
+      },
+      context: new NativeMap([['maplibre-map', ctx]]),
+    });
+
+    const control = mockMap.addControl.mock.calls[0][0];
+    const container = control.onAdd();
+
+    const labelTexts = Array.from(container.querySelectorAll('span:last-child')).map(
+      (el) => el.textContent
+    );
+    expect(labelTexts).toEqual(['Low', 'High']);
+  });
+
+  it('renders a title element when title prop is provided', () => {
+    const { mockMap, ctx } = makeMockContext();
+    render(MapLegend, {
+      props: {
+        title: 'Population density',
+        breaks: [100],
+        colors: ['#eee', '#333'],
+      },
+      context: new NativeMap([['maplibre-map', ctx]]),
+    });
+
+    const control = mockMap.addControl.mock.calls[0][0];
+    const container = control.onAdd();
+
+    expect(container.firstChild.textContent).toBe('Population density');
+  });
+
+  it('renders one swatch row per color', () => {
+    const { mockMap, ctx } = makeMockContext();
+    const colors = ['#f7fbff', '#c6dbef', '#6baed6', '#2171b5', '#08306b'];
+    render(MapLegend, {
+      props: { breaks: [10, 25, 50, 100], colors },
+      context: new NativeMap([['maplibre-map', ctx]]),
+    });
+
+    const control = mockMap.addControl.mock.calls[0][0];
+    const container = control.onAdd();
+    const swatches = container.querySelectorAll('span[aria-hidden="true"]');
+    expect(swatches).toHaveLength(colors.length);
+  });
+
+  it('calls removeControl on the map when destroyed', () => {
+    const { mockMap, ctx } = makeMockContext();
+    const { unmount } = render(MapLegend, {
+      props: { breaks: [50], colors: ['#eee', '#333'] },
+      context: new NativeMap([['maplibre-map', ctx]]),
+    });
+
+    unmount();
+    expect(mockMap.removeControl).toHaveBeenCalledOnce();
   });
 });
