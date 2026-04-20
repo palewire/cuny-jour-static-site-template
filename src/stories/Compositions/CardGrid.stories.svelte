@@ -2,7 +2,8 @@
   CardGrid.stories.svelte
 
   Composition story: a standard article layout with search and dropdown
-  inputs that filter a responsive grid of Card components.
+  inputs that filter a responsive grid of Card components using the
+  CardGrid component with built-in pagination.
 -->
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
@@ -12,7 +13,7 @@
   import ArticleBody from '$lib/components/Article/ArticleBody.svelte';
   import SearchInput from '$lib/components/Forms/SearchInput.svelte';
   import DropdownInput from '$lib/components/Forms/DropdownInput.svelte';
-  import Card from '$lib/components/Data/Card.svelte';
+  import CardGrid from '$lib/components/Data/CardGrid.svelte';
   import MethodologyBox from '$lib/components/Article/MethodologyBox.svelte';
 
   const PROGRAMS = [
@@ -22,6 +23,7 @@
       description:
         'Our flagship program trains reporters, editors, and multimedia journalists for the modern newsroom.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Graduate',
     },
     {
       title: 'M.A. in Engagement Journalism',
@@ -29,6 +31,7 @@
       description:
         'A unique program focused on building trust and deepening connections with communities.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Graduate',
     },
     {
       title: 'Bilingual Journalism',
@@ -36,6 +39,7 @@
       description:
         'For students fluent in English and Spanish who want to serve multilingual communities.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Graduate',
     },
     {
       title: 'Social Journalism',
@@ -43,6 +47,7 @@
       description:
         'Learn to practice journalism that listens to and engages with communities.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Graduate',
     },
     {
       title: 'News Innovation & Leadership',
@@ -50,6 +55,7 @@
       description:
         'Evening and weekend workshops for mid-career journalists looking to lead.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Professional',
     },
     {
       title: 'Investigative Reporting',
@@ -57,6 +63,7 @@
       description:
         'Intensive training in watchdog journalism, data analysis, and public records.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Professional',
     },
     {
       title: 'Data Journalism',
@@ -64,6 +71,7 @@
       description:
         'Workshops on coding, data visualization, and computational reporting.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Professional',
     },
     {
       title: 'Audio & Podcasting',
@@ -71,12 +79,14 @@
       description:
         'Hands-on production training for radio, podcasts, and audio storytelling.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Professional',
     },
     {
       title: 'Entrepreneurial Journalism',
       category: 'professional',
       description: 'Build a sustainable media business from idea to launch.',
       href: 'https://www.journalism.cuny.edu/',
+      footerLabel: 'Professional',
     },
   ];
 
@@ -149,21 +159,7 @@
       {filtered.length} program{filtered.length !== 1 ? 's' : ''} found
     </p>
 
-    <div class="card-grid">
-      {#each filtered as program (program.title)}
-        <Card href={program.href}>
-          <h3>{program.title}</h3>
-          <p>{program.description}</p>
-          {#snippet footer()}
-            <span class="category-tag"
-              >{program.category === 'graduate'
-                ? 'Graduate'
-                : 'Professional'}</span
-            >
-          {/snippet}
-        </Card>
-      {/each}
-    </div>
+    <CardGrid items={filtered} pageSize={6} />
 
     {#if filtered.length === 0}
       <p class="no-results">
@@ -207,33 +203,6 @@
     font-size: var(--font-size-sm, 0.875rem);
     color: var(--color-medium-gray, #666);
     margin-bottom: var(--spacing-sm, 0.75rem);
-  }
-
-  .card-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md, 1rem);
-    margin-bottom: var(--spacing-lg, 2rem);
-  }
-
-  @media (min-width: 600px) {
-    .card-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 900px) {
-    .card-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .category-tag {
-    font-size: var(--font-size-sm, 0.875rem);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: var(--color-accent, #003da5);
   }
 
   .no-results {

@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
 import BigNumber from '$lib/components/Data/BigNumber.svelte';
 import RankingList from '$lib/components/Data/RankingList.svelte';
+import CardGrid from '$lib/components/Data/CardGrid.svelte';
 
 describe('BigNumber', () => {
   it('renders the number and label', () => {
@@ -113,5 +114,94 @@ describe('RankingList', () => {
     render(RankingList, { props: { title: 'Empty' } });
     expect(screen.getByText('Empty')).toBeTruthy();
     expect(screen.queryByText('← Previous')).toBeNull();
+  });
+});
+
+describe('CardGrid', () => {
+  const sampleItems = [
+    { title: 'Alpha', description: 'First item' },
+    { title: 'Beta', description: 'Second item' },
+    { title: 'Gamma', description: 'Third item' },
+    { title: 'Delta', description: 'Fourth item' },
+    { title: 'Epsilon', description: 'Fifth item' },
+  ];
+
+  it('renders a title when provided', () => {
+    render(CardGrid, {
+      props: { title: 'My Cards', items: sampleItems },
+    });
+    expect(screen.getByText('My Cards')).toBeTruthy();
+  });
+
+  it('renders all items when pageSize is not set', () => {
+    render(CardGrid, { props: { items: sampleItems } });
+    expect(screen.getByText('Alpha')).toBeTruthy();
+    expect(screen.getByText('Epsilon')).toBeTruthy();
+  });
+
+  it('renders only the first page of items when pageSize is set', () => {
+    render(CardGrid, { props: { items: sampleItems, pageSize: 2 } });
+    expect(screen.getByText('Alpha')).toBeTruthy();
+    expect(screen.getByText('Beta')).toBeTruthy();
+    expect(screen.queryByText('Gamma')).toBeNull();
+  });
+
+  it('shows pagination controls when pageSize is set', () => {
+    render(CardGrid, { props: { items: sampleItems, pageSize: 2 } });
+    expect(screen.getByText(/Showing 1–2 of 5/)).toBeTruthy();
+    expect(screen.getByText('← Previous')).toBeTruthy();
+    expect(screen.getByText('Next →')).toBeTruthy();
+  });
+
+  it('disables Previous button on the first page', () => {
+    render(CardGrid, { props: { items: sampleItems, pageSize: 2 } });
+    const prevBtn = screen.getByText('← Previous');
+    expect(prevBtn.disabled).toBe(true);
+  });
+
+  it('navigates to the next page when Next is clicked', async () => {
+    render(CardGrid, { props: { items: sampleItems, pageSize: 2 } });
+    const nextBtn = screen.getByText('Next →');
+    await nextBtn.click();
+    expect(screen.getByText('Gamma')).toBeTruthy();
+    expect(screen.getByText('Delta')).toBeTruthy();
+    expect(screen.queryByText('Alpha')).toBeNull();
+    expect(screen.getByText(/Showing 3–4 of 5/)).toBeTruthy();
+  });
+
+  it('disables Next button on the last page', async () => {
+    render(CardGrid, { props: { items: sampleItems, pageSize: 2 } });
+    const nextBtn = screen.getByText('Next →');
+    await nextBtn.click(); // page 2
+    await nextBtn.click(); // page 3 (last)
+    expect(screen.getByText('Epsilon')).toBeTruthy();
+    expect(nextBtn.disabled).toBe(true);
+    expect(screen.getByText(/Showing 5–5 of 5/)).toBeTruthy();
+  });
+
+  it('navigates back with Previous button', async () => {
+    render(CardGrid, { props: { items: sampleItems, pageSize: 2 } });
+    const nextBtn = screen.getByText('Next →');
+    await nextBtn.click(); // page 2
+    const prevBtn = screen.getByText('← Previous');
+    await prevBtn.click(); // back to page 1
+    expect(screen.getByText('Alpha')).toBeTruthy();
+    expect(screen.getByText('Beta')).toBeTruthy();
+    expect(screen.getByText(/Showing 1–2 of 5/)).toBeTruthy();
+  });
+
+  it('does not show pagination when all items fit on one page', () => {
+    render(CardGrid, { props: { items: sampleItems, pageSize: 10 } });
+    expect(screen.getByText('Alpha')).toBeTruthy();
+    expect(screen.getByText('Epsilon')).toBeTruthy();
+    expect(screen.queryByText('← Previous')).toBeNull();
+  });
+
+  it('renders footer labels when provided', () => {
+    const itemsWithFooter = [
+      { title: 'Alpha', description: 'First', footerLabel: 'Graduate' },
+    ];
+    render(CardGrid, { props: { items: itemsWithFooter } });
+    expect(screen.getByText('Graduate')).toBeTruthy();
   });
 });
