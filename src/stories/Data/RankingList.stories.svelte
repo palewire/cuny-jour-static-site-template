@@ -2,8 +2,10 @@
   RankingList.stories.svelte
 
   Stories for RankingList and RankingCard.
-  RankingList is a container with an optional title.
-  RankingCard is a horizontal card with rank number, optional image, title, and description.
+  RankingList is a container with an optional title and optional pagination.
+
+  Slot mode: Pass RankingCard children directly (no pagination).
+  Data-driven mode: Pass an `items` array and `pageSize` to enable pagination.
 -->
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
@@ -15,6 +17,79 @@
     component: RankingList,
     tags: ['autodocs'],
   });
+
+  const paginatedItems = [
+    {
+      rank: 1,
+      title: 'Politics',
+      description: 'City and state government coverage.',
+      value: '312',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 2,
+      title: 'Education',
+      description: 'Reporting on schools and higher ed.',
+      value: '289',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 3,
+      title: 'Health',
+      description: 'Public health and healthcare access.',
+      value: '245',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 4,
+      title: 'Housing',
+      description: "Investigating the city's housing crisis.",
+      value: '198',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 5,
+      title: 'Arts & Culture',
+      description: "Coverage of NYC's cultural scene.",
+      value: '156',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 6,
+      title: 'Immigration',
+      description: 'Stories from immigrant communities.',
+      value: '134',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 7,
+      title: 'Criminal Justice',
+      description: 'Courts, policing, and incarceration.',
+      value: '121',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 8,
+      title: 'Environment',
+      description: 'Climate change and environmental justice.',
+      value: '98',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 9,
+      title: 'Technology',
+      description: 'AI, social media, and digital rights.',
+      value: '87',
+      valueLabel: 'alumni',
+    },
+    {
+      rank: 10,
+      title: 'Business',
+      description: 'Economy and workforce reporting.',
+      value: '72',
+      valueLabel: 'alumni',
+    },
+  ];
 </script>
 
 <!-- Default: a ranked list of CUNY journalism programs -->
@@ -145,5 +220,16 @@
         description="City and state government coverage."
       />
     </RankingList>
+  </div>
+</Story>
+
+<!-- With Pagination: data-driven list with Previous / Next controls -->
+<Story name="With Pagination">
+  <div style="max-width: 600px;">
+    <RankingList
+      title="Most Alumni by Beat"
+      items={paginatedItems}
+      pageSize={3}
+    />
   </div>
 </Story>
