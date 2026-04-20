@@ -96,14 +96,13 @@ USAGE EXAMPLE:
     // Apply container styles
     Object.assign(container.style, {
       background: 'rgba(255,255,255,0.92)',
-      borderRadius: '4px',
+      borderRadius: 'var(--border-radius-sm)',
       padding: '8px 10px',
-      fontFamily:
-        '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif',
-      fontSize: '12px',
-      lineHeight: '1.4',
-      color: '#333333',
-      boxShadow: '0 1px 4px rgba(0,0,0,0.2)',
+      fontFamily: 'var(--font-sans)',
+      fontSize: 'var(--font-size-xs)',
+      lineHeight: 'var(--leading-caption)',
+      color: 'var(--color-text)',
+      boxShadow: '0 1px 4px var(--color-shadow)',
       maxWidth: '180px',
       minWidth: '80px',
     });
@@ -111,12 +110,12 @@ USAGE EXAMPLE:
     if (currentTitle) {
       const titleEl = document.createElement('div');
       Object.assign(titleEl.style, {
-        fontWeight: '600',
-        marginBottom: '6px',
-        fontSize: '11px',
+        fontWeight: 'var(--font-weight-semibold)',
+        marginBottom: 'var(--spacing-xs)',
+        fontSize: 'var(--font-size-xs)',
         textTransform: 'uppercase',
-        letterSpacing: '0.05em',
-        color: '#1a1a1a',
+        letterSpacing: 'var(--letter-spacing-wider)',
+        color: 'var(--color-dark)',
       });
       titleEl.textContent = currentTitle;
       container.appendChild(titleEl);
@@ -137,7 +136,7 @@ USAGE EXAMPLE:
         width: '14px',
         height: '14px',
         background: color,
-        border: '1px solid rgba(0,0,0,0.15)',
+        border: 'var(--border-width-thin) solid var(--color-border)',
         borderRadius: '2px',
         flexShrink: '0',
       });

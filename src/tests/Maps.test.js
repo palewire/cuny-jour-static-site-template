@@ -424,7 +424,7 @@ describe('MapLegend', () => {
       render(MapLegend, {
         props: { breaks: [], colors: [] },
       })
-    ).toThrow('MapLegend must be placed inside a Map component');
+    ).toThrow(/MapLegend must be placed inside a Map component/);
   });
 
   it('auto-generates labels from break values', () => {
