@@ -33,7 +33,7 @@ Supports two modes:
   {/if}
   <div class="ranking-list-items">
     {#if items.length > 0}
-      {#each pageItems as item (item.rank ?? item.title)}
+      {#each pageItems as item, i (item.rank != null ? item.rank : `${currentPage}-${i}`)}
         <RankingCard {...item} />
       {/each}
     {:else if children}
