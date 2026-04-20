@@ -40,7 +40,7 @@ Supports two modes:
   {/if}
   <div class="card-grid" style="--grid-columns: {columns};">
     {#if items.length > 0}
-      {#each pageItems as item, i (item.title ?? `${currentPage}-${i}`)}
+      {#each pageItems as item, i (`p${currentPage}-i${i}`)}
         {#if item.footerLabel}
           <Card href={item.href} image={item.image} imageAlt={item.imageAlt}>
             <h3>{item.title}</h3>
@@ -98,7 +98,7 @@ Supports two modes:
 
   .card-grid-title {
     margin: 0 0 var(--spacing-sm, 0.75rem);
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm, 0.875rem);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -123,7 +123,7 @@ Supports two modes:
   }
 
   .card-grid-footer-label {
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm, 0.875rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.03em;
