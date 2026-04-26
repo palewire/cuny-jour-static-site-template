@@ -15,7 +15,6 @@
   import LottieGraphic from '$lib/components/Media/LottieGraphic.svelte';
   import MethodologyBox from '$lib/components/Article/MethodologyBox.svelte';
   import RankingList from '$lib/components/Data/RankingList.svelte';
-  import RankingCard from '$lib/components/Data/RankingCard.svelte';
   import SiteHeader from '$lib/components/Layout/SiteHeader.svelte';
   import SiteFooter from '$lib/components/Layout/SiteFooter.svelte';
 
@@ -28,6 +27,74 @@
       layout: 'fullscreen',
     },
   });
+
+  const explorerItems = [
+    {
+      rank: 1,
+      href: 'https://www.journalism.cuny.edu/',
+      title: 'M.A. in Journalism',
+      description:
+        'Our flagship program trains reporters, editors, and multimedia journalists.',
+      value: '420',
+      valueLabel: 'enrolled',
+    },
+    {
+      rank: 2,
+      href: 'https://www.journalism.cuny.edu/',
+      title: 'M.A. in Engagement Journalism',
+      description: 'Building trust and deepening connections with communities.',
+      value: '285',
+      valueLabel: 'enrolled',
+    },
+    {
+      rank: 3,
+      href: 'https://www.journalism.cuny.edu/',
+      title: 'Bilingual Journalism',
+      description: 'For students fluent in English and Spanish.',
+      value: '140',
+      valueLabel: 'enrolled',
+    },
+    {
+      rank: 4,
+      href: 'https://www.journalism.cuny.edu/',
+      title: 'Professional Education',
+      description: 'Evening and weekend workshops for mid-career journalists.',
+      value: '95',
+      valueLabel: 'enrolled',
+    },
+    {
+      rank: 5,
+      href: 'https://www.journalism.cuny.edu/',
+      title: 'Fellowship Programs',
+      description: 'Supporting in-depth reporting projects.',
+      value: '45',
+      valueLabel: 'fellows',
+    },
+    {
+      rank: 6,
+      href: 'https://www.journalism.cuny.edu/',
+      title: 'Social Journalism',
+      description: 'Community-centered approaches to news and information.',
+      value: '38',
+      valueLabel: 'enrolled',
+    },
+    {
+      rank: 7,
+      href: 'https://www.journalism.cuny.edu/',
+      title: 'Entrepreneurial Journalism',
+      description: 'Building sustainable news ventures.',
+      value: '32',
+      valueLabel: 'enrolled',
+    },
+    {
+      rank: 8,
+      href: 'https://www.journalism.cuny.edu/',
+      title: 'Data Journalism',
+      description: 'Reporting with data, code, and visualization.',
+      value: '28',
+      valueLabel: 'enrolled',
+    },
+  ];
 </script>
 
 <!--
@@ -57,48 +124,11 @@
   </DatabaseHeader>
 
   <div class="results-container">
-    <RankingList title="Top Programs by Enrollment">
-      <RankingCard
-        rank={1}
-        href="https://www.journalism.cuny.edu/"
-        title="M.A. in Journalism"
-        description="Our flagship program trains reporters, editors, and multimedia journalists."
-        value="420"
-        valueLabel="enrolled"
-      />
-      <RankingCard
-        rank={2}
-        href="https://www.journalism.cuny.edu/"
-        title="M.A. in Engagement Journalism"
-        description="Building trust and deepening connections with communities."
-        value="285"
-        valueLabel="enrolled"
-      />
-      <RankingCard
-        rank={3}
-        href="https://www.journalism.cuny.edu/"
-        title="Bilingual Journalism"
-        description="For students fluent in English and Spanish."
-        value="140"
-        valueLabel="enrolled"
-      />
-      <RankingCard
-        rank={4}
-        href="https://www.journalism.cuny.edu/"
-        title="Professional Education"
-        description="Evening and weekend workshops for mid-career journalists."
-        value="95"
-        valueLabel="enrolled"
-      />
-      <RankingCard
-        rank={5}
-        href="https://www.journalism.cuny.edu/"
-        title="Fellowship Programs"
-        description="Supporting in-depth reporting projects."
-        value="45"
-        valueLabel="fellows"
-      />
-    </RankingList>
+    <RankingList
+      title="Top Programs by Enrollment"
+      items={explorerItems}
+      pageSize={5}
+    />
   </div>
 
   <div class="methodology-container">
