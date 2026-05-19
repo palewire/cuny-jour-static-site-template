@@ -46,9 +46,9 @@ jobs:
       - name: Run tests
         run: npm run test
 
-  build:
+  build-site:
     runs-on: ubuntu-latest
-    name: Build
+    name: Build site
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -67,12 +67,61 @@ jobs:
         env:
           BASE_PATH: /${{ github.event.repository.name }}
 
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: 'build'
+
+  build-storybook:
+    runs-on: ubuntu-latest
+    name: Build storybook
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Build Storybook
         run: npm run build-storybook
         env:
           BASE_PATH: /${{ github.event.repository.name }}
 
-      - name: Upload artifact
+      - name: Upload storybook artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-build
+          path: 'build/storybook'
+
+  package:
+    runs-on: ubuntu-latest
+    name: Package Pages artifact
+    needs:
+      - build-site
+      - build-storybook
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: site-build
+          path: 'build'
+
+      - name: Download storybook artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: storybook-build
+          path: 'build/storybook'
+          if-no-files-found: ignore
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: 'build'
@@ -80,7 +129,7 @@ jobs:
   deploy:
     name: Deploy
     if: github.event_name != 'pull_request'
-    needs: build
+    needs: package
     runs-on: ubuntu-latest
     environment:
       name: github-pages
