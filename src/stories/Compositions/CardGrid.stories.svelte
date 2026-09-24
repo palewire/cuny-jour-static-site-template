@@ -1,6 +1,4 @@
 <!--
-  CardGrid.stories.svelte
-
   Composition story: a standard article layout with search and dropdown
   inputs that filter a responsive grid of Card components using the
   CardGrid component with built-in pagination.
@@ -179,6 +177,8 @@
 </Story>
 
 <style lang="scss">
+  @use '$lib/styles' as *;
+
   .container {
     width: 100%;
     max-width: var(--max-width);
@@ -193,7 +193,7 @@
     margin: var(--spacing-md, 1rem) 0;
   }
 
-  @media (min-width: 600px) {
+  @include tablet {
     .filters {
       flex-direction: row;
     }

@@ -32,6 +32,16 @@ Supports two modes:
   );
   const startIndex = $derived((currentPage - 1) * pageSize + 1);
   const endIndex = $derived(Math.min(currentPage * pageSize, items.length));
+
+  $effect(() => {
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+
+    if (currentPage < 1) {
+      currentPage = 1;
+    }
+  });
 </script>
 
 <div class="card-grid-wrapper">
@@ -94,6 +104,7 @@ Supports two modes:
 
   .card-grid-wrapper {
     width: 100%;
+    margin-bottom: var(--spacing-lg);
   }
 
   .card-grid-title {
@@ -107,7 +118,7 @@ Supports two modes:
   .card-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-md, 1rem);
+    gap: var(--spacing-md);
   }
 
   @include tablet {
