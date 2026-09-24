@@ -370,6 +370,30 @@ describe('Map', () => {
     await vi.advanceTimersByTimeAsync(0);
     expect(container.querySelector('figcaption')).toBeNull();
   });
+
+  it('uses the fiord theme URL when theme="fiord"', async () => {
+    const maplibreModule = await import('maplibre-gl');
+    const constructorSpy = vi.spyOn(maplibreModule, 'Map');
+    render(Map, { props: { theme: 'fiord' } });
+    await vi.advanceTimersByTimeAsync(0);
+    expect(constructorSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        style: 'https://tiles.openfreemap.org/styles/fiord',
+      })
+    );
+  });
+
+  it('uses the dark theme URL when theme="dark"', async () => {
+    const maplibreModule = await import('maplibre-gl');
+    const constructorSpy = vi.spyOn(maplibreModule, 'Map');
+    render(Map, { props: { theme: 'dark' } });
+    await vi.advanceTimersByTimeAsync(0);
+    expect(constructorSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        style: 'https://tiles.openfreemap.org/styles/dark',
+      })
+    );
+  });
 });
 
 describe('Legend', () => {

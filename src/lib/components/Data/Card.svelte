@@ -67,10 +67,15 @@ Card.svelte — A card container with optional image, link, and footer actions.
   }
 
   .card-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
     img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
     }
   }
 

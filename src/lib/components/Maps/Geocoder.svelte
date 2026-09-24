@@ -236,9 +236,6 @@ USAGE EXAMPLE:
           onmousedown={() => selectResult(result)}
         >
           <span class="result-name">{result.displayName}</span>
-          <span class="result-coords">
-            {result.lat.toFixed(4)}, {result.lng.toFixed(4)}
-          </span>
         </li>
       {/each}
     </ul>
@@ -362,13 +359,6 @@ USAGE EXAMPLE:
     font-size: var(--font-size-sm);
     line-height: var(--leading-snug);
     color: var(--color-dark);
-  }
-
-  .result-coords {
-    font-family: var(--font-sans);
-    font-size: var(--font-size-xs);
-    color: var(--color-medium-gray);
-    letter-spacing: var(--letter-spacing-wide);
   }
 
   @include tablet {

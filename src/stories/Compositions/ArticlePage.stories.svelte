@@ -1,12 +1,5 @@
 <!--
-  ArticlePage.stories.svelte
-
-  Full-page composition stories that combine multiple components to demonstrate
-  how an article page looks when fully assembled. These stories are great for
-  checking overall layout, typography hierarchy, and component interactions.
-
-  This file does NOT map to a single component — it showcases how the
-  building blocks fit together in a realistic editorial context.
+  A complete article page with all components assembled.
 -->
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
@@ -33,11 +26,6 @@
   });
 </script>
 
-<!--
-  Default: a complete article page with all components assembled.
-  Resize the canvas (or use the Viewport toolbar) to see how the
-  layout responds across mobile, tablet, and desktop breakpoints.
--->
 <Story name="Default" asChild>
   <SiteHeader />
 

@@ -32,12 +32,23 @@ Supports two modes:
   );
   const startIndex = $derived((currentPage - 1) * pageSize + 1);
   const endIndex = $derived(Math.min(currentPage * pageSize, items.length));
+
+  $effect(() => {
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+
+    if (currentPage < 1) {
+      currentPage = 1;
+    }
+  });
 </script>
 
 <div class="card-grid-wrapper">
   {#if title}
     <h2 class="card-grid-title">{title}</h2>
   {/if}
+
   <div class="card-grid" style="--grid-columns: {columns};">
     {#if items.length > 0}
       {#each pageItems as item, i (`p${currentPage}-i${i}`)}
@@ -64,6 +75,7 @@ Supports two modes:
       {@render children()}
     {/if}
   </div>
+
   {#if paginated && totalPages > 1}
     <div class="card-grid-pagination">
       <span class="card-grid-count">
@@ -107,7 +119,8 @@ Supports two modes:
   .card-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-md, 1rem);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
   }
 
   @include tablet {

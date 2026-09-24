@@ -1,12 +1,5 @@
 <!--
-  MultimediaGalleryPage.stories.svelte
-
-  Full-page composition story that combines SlideGallery with TitleSlide,
-  PhotoSlide, TextSlide, and CreditsSlide to demonstrate how a complete
-  multimedia gallery looks when fully assembled with scroll-snapping.
-
-  This file does NOT map to a single component — it showcases how the
-  gallery building blocks fit together in a realistic editorial context.
+  A complete multimedia gallery with all slide types.
 -->
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
@@ -25,7 +18,6 @@
   });
 </script>
 
-<!-- Default: a complete multimedia gallery with all slide types -->
 <Story name="Default" asChild>
   <div class="gallery-frame">
     <SlideGallery>
@@ -104,7 +96,6 @@
   </div>
 </Story>
 
-<!-- Desktop: landscape preview simulating a laptop screen -->
 <Story
   name="Desktop"
   asChild

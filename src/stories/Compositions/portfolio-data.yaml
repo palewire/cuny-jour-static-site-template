@@ -1,0 +1,36 @@
+name: Max Eastman
+tagline: 'Editor · Poet · Reformed revolutionary'
+photo: /photos/max-eastman.jpg
+photoAlt: 'Max Eastman, circa 1913. Bain News Service, Library of Congress.'
+email: max.eastman@themasses.org
+github: maxeastman
+linkedin: maxeastman
+bio: |
+  I am the editor of The Masses, a monthly socialist magazine based in New York City. My writing covers politics, art, the labor movement and the fight for civil liberties.
+
+  I am completing a translation of Leon Trotsky's writings for American readers and reporting on the prosecution of anti-war journalists like myself under the Espionage Act.
+clips:
+  - title: The Trial of The Masses
+    description: "A first-hand account of the federal government's attempt to silence New York's most radical publication."
+    category: Investigative
+    href: https://www.marxists.org/archive/eastman/
+    image: /photos/max-eastman-masses-trial.jpg
+    url: https://www.marxists.org/archive/eastman/works/1918/trial.htm
+    skills:
+      - Investigative reporting
+      - Court records analysis
+      - Long-form writing
+    body: |
+      In 1918 the United States government charged the editors and cartoonists of The Masses with conspiracy to obstruct military recruitment under the Espionage Act. The magazine had published anti-war poetry, cartoons and editorials that prosecutors argued undermined the draft.
+
+      This account traces the two federal trials from jury selection through acquittal, drawing on courtroom transcripts, personal correspondence and interviews with the defendants. It examines how wartime censorship threatened press freedom and how a small publication fought back in open court.
+  - title: The Suffragettes of Washington Square
+    description: "Reporting on the organizers who turned Greenwich Village into the center of New York's suffrage movement."
+    category: News
+    href: https://www.marxists.org/archive/eastman/
+    image: /photos/suffragettes-nyt-1921.jpg
+  - title: Since Lenin Died
+    description: Reflections on the failure of the Russian Revolution and the rise of Stalinism
+    category: Feature
+    href: https://www.marxists.org/archive/eastman/
+    image: /photos/stalin-1920-1.jpg

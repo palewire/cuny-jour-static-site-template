@@ -1,12 +1,5 @@
 <!--
-  DatabaseExplorerComposition.stories.svelte
-
-  Composition stories that combine DatabaseHeader with a large Lottie graphic,
-  search input, and dropdown — in the style of how ProPublica tops their
-  database search applications.
-
-  The hero section is rendered by DatabaseHeader, which handles the two-column
-  layout (text + controls on the left, animated graphic on the right).
+  A bold hero combined with a Lottie animation, search input, and a ranking list of cards.
 -->
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
@@ -97,11 +90,6 @@
   ];
 </script>
 
-<!--
-  Default: ProPublica-style hero with headline + byline on the left
-  and a large animated Lottie data graphic on the right, rendered
-  by DatabaseHeader.
--->
 <Story name="Default" asChild>
   <SiteHeader />
 

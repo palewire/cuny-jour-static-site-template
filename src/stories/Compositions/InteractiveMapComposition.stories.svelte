@@ -1,10 +1,5 @@
 <!--
-  InteractiveMapComposition.stories.svelte
-
-  Composition story that combines the Geocoder address search with an
-  interactive Map and a MapLayer dot marker. When the user searches for
-  a location in New York City, the map flies to that location and drops
-  a marker dot.
+  Combine a geocoder search input with an interactive map that flies to the selected location and drops a marker.
 -->
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
@@ -64,7 +59,6 @@
   }
 </script>
 
-<!-- Default: Full-page interactive NYC location search -->
 <Story name="Default" asChild>
   <SiteHeader />
 

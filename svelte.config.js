@@ -23,7 +23,7 @@ const config = {
     adapter: adapter({
       pages: 'build', // Output directory for HTML pages
       assets: 'build', // Output directory for static assets
-      fallback: undefined, // No fallback page (we're fully static)
+      fallback: '404.html', // Fallback page for GitHub Pages 404 handling
       precompress: false, // Don't pre-compress files
       strict: true, // Fail if any routes can't be prerendered
     }),

@@ -10,7 +10,7 @@
   - longitude: Map center longitude (default: -74.006)
   - latitude: Map center latitude (default: 40.7128)
   - zoom: Initial zoom level 0–22 (default: 10)
-  - theme: Basemap theme — 'liberty' | 'bright' | 'positron' (default: 'liberty')
+  - theme: Basemap theme — 'liberty' | 'bright' | 'positron' | 'fiord' | 'dark' (default: 'liberty')
   - interactive: Allow panning/zooming (default: true)
   - border: Show an accent border around the map (default: false)
   - width: Optional explicit width in pixels
@@ -42,9 +42,9 @@
       },
       theme: {
         control: { type: 'select' },
-        options: ['liberty', 'bright', 'positron'],
+        options: ['liberty', 'bright', 'positron', 'fiord', 'dark'],
         description:
-          "OpenFreeMap basemap theme ('liberty', 'bright', or 'positron')",
+          "OpenFreeMap basemap theme ('liberty', 'bright', 'positron', 'fiord', or 'dark')",
       },
       interactive: {
         control: 'boolean',
@@ -125,6 +125,32 @@
     zoom: 10,
     theme: 'positron',
     caption: 'New York City with the positron basemap theme.',
+    credit: 'OpenFreeMap / OpenStreetMap contributors',
+  }}
+/>
+
+<!-- Fiord Theme -->
+<Story
+  name="Fiord Theme"
+  args={{
+    longitude: -74.006,
+    latitude: 40.7128,
+    zoom: 10,
+    theme: 'fiord',
+    caption: 'New York City with the fiord basemap theme.',
+    credit: 'OpenFreeMap / OpenStreetMap contributors',
+  }}
+/>
+
+<!-- Dark Theme -->
+<Story
+  name="Dark Theme"
+  args={{
+    longitude: -74.006,
+    latitude: 40.7128,
+    zoom: 10,
+    theme: 'dark',
+    caption: 'New York City with the dark basemap theme.',
     credit: 'OpenFreeMap / OpenStreetMap contributors',
   }}
 />

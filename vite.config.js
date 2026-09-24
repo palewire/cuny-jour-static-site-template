@@ -13,11 +13,12 @@
  */
 import { sveltekit } from '@sveltejs/kit/vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import ViteYaml from '@modyfi/vite-plugin-yaml';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 
 export default defineConfig(({ mode }) => ({
-  plugins: [mode === 'test' ? svelte({ hot: false }) : sveltekit()],
+  plugins: [mode === 'test' ? svelte({ hot: false }) : sveltekit(), ViteYaml()],
   ...(mode === 'test' ? { resolve: { conditions: ['browser'] } } : {}),
   test: {
     environment: 'jsdom',

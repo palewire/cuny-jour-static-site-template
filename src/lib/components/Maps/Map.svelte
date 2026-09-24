@@ -30,13 +30,15 @@ USAGE EXAMPLE:
     liberty: 'https://tiles.openfreemap.org/styles/liberty',
     bright: 'https://tiles.openfreemap.org/styles/bright',
     positron: 'https://tiles.openfreemap.org/styles/positron',
+    fiord: 'https://tiles.openfreemap.org/styles/fiord',
+    dark: 'https://tiles.openfreemap.org/styles/dark',
   };
 
   let {
     longitude = -74.006, // Map center longitude (default: NYC)
     latitude = 40.7128, // Map center latitude
     zoom = 10, // Initial zoom level (0–22)
-    theme = 'liberty', // Basemap theme: 'liberty' | 'bright' | 'positron'
+    theme = 'liberty', // Basemap theme: 'liberty' | 'bright' | 'positron' | 'fiord' | 'dark'
     interactive = true, // Allow panning and zooming
     border = false, // Show an accent border around the map
     width = null, // Optional explicit width in pixels

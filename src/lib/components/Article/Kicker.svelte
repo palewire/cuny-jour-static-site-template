@@ -10,13 +10,17 @@ USAGE EXAMPLE:
 <Kicker text="Housing Coverage" />
 -->
 <script>
-  let {
-    text = '', // The kicker label to display
-  } = $props();
+  let { text = '', href = '' } = $props();
 </script>
 
 {#if text}
-  <p class="kicker">{text}</p>
+  <p class="kicker">
+    {#if href}
+      <a {href}>{text}</a>
+    {:else}
+      {text}
+    {/if}
+  </p>
 {/if}
 
 <style lang="scss">
@@ -28,5 +32,14 @@ USAGE EXAMPLE:
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wider);
     margin: 0 0 var(--spacing-xxs);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 </style>

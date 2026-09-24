@@ -216,6 +216,10 @@ img {
   padding: var(--spacing-lg) var(--spacing-md);
 }
 
+.container.wide {
+  max-width: var(--max-width-wide);
+}
+
 /* ===========================================
    Responsive Typography
    =========================================== */
